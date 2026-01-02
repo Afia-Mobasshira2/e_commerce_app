@@ -1,3 +1,5 @@
+//this class containes all the app text in String format
+
 class TImages {
 
 //App logos
