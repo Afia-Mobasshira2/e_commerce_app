@@ -11,11 +11,12 @@ class TDeviceUtils {
   static void hideKeyboard(BuildContext context){
     FocusScope.of(context).requestFocus(FocusNode());
   }
-  static Future<void>setStatusBarColor(Color color)async {
-    SystemChrome.setSystemUIOverlayStyle(
-      SystemUIOverlayStyle(statusBarColor:color)
-    );
-  }
+  
+  static Future<void> setStatusBarColor(Color color) async {
+  SystemChrome.setSystemUIOverlayStyle(
+    SystemUiOverlayStyle(statusBarColor: color), // Ensure the syntax matches exactly
+  );
+}
   static bool isLandscapeOrientation(BuildContext context){
     final viewInserts = View.of(context).viewInsets;
     return viewInserts.bottom == 0;
