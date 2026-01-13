@@ -16,5 +16,17 @@ class TLocalStorage {
   }
 
    //generic method to read data
-  T? readData<T>
+  T? readData<T>(String key){
+    return _storage.read<T>(key);
+  }
+
+  //generic method to remove data
+  Future<void> removeData<T>(String key)async{
+    await _storage.remove(key);
+  }
+
+  //clear all the data in storage
+  Future<void> clearAll<T>()async{
+    await _storage.erase();
+  }
 }
