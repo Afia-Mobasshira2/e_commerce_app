@@ -26,6 +26,8 @@ dependencies:
   # State Management
   get: ^4.6.5
   get_storage: ^2.1.1
+  flutter_native_splash: ^2.4.6
+  smooth_page_indicator: ^2.0.1
 
   # ----------product specifis------------
 
@@ -50,9 +52,11 @@ flutter:
   # ----local assets--------
 
  
-  # assets:
-  #   - images/a_dot_burr.jpeg
-  #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/logos/
+    - assets/images/
+
+    
 
  
   # fonts:
