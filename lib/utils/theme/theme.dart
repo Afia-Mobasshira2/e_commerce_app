@@ -22,7 +22,7 @@ class TAppTheme{
     textTheme: TTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightChipTheme,
     elevatedButtonTheme: TElevatedButtonTheme.lightElevatedButtonTheme,
-    outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
+   // outlinedButtonTheme: TOutlinedButtonTheme.lightOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.lightInputDecorationTheme,
   );//creating variable
   static ThemeData darkTheme = ThemeData(
@@ -37,7 +37,7 @@ class TAppTheme{
     textTheme: TTextTheme.darkTextTheme,
     chipTheme: TChipTheme.darkChipTheme,
     elevatedButtonTheme: TElevatedButtonTheme.darkElevatedButtonTheme,
-    outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
+  // outlinedButtonTheme: TOutlinedButtonTheme.darkOutlinedButtonTheme,
     inputDecorationTheme: TTextFormFieldTheme.darkInputDecorationTheme,
   );
 }
