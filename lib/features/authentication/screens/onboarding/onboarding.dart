@@ -48,7 +48,10 @@ class OnboardingScreen extends StatelessWidget {
         onBoardingDotNavigation(),
 
         //Circular Button
-
+        Positioned(
+          right: TSizes.defaultSpace,
+          bottom: TDeviceUtils.getBottomNavigationBarHeight(),
+          child: ElevatedButton())
         ],
       ),
     );
