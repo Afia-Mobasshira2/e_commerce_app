@@ -1,4 +1,6 @@
 
+import 'package:e_commerce_app/features/authentication/controllers.onboarding/onboarding_controller.dart';
+import 'package:e_commerce_app/features/authentication/screens/onboarding/widgets/onboarding_dot_navigation.dart';
 import 'package:e_commerce_app/features/authentication/screens/onboarding/widgets/onboarding_page.dart';
 import 'package:e_commerce_app/features/authentication/screens/onboarding/widgets/onboarding_skip.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
@@ -8,19 +10,25 @@ import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+
 
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(OnboardingController());
+
     return Scaffold(
       body: Stack(
         children: [
           //Horigantal Scrollable pages
           PageView(
+            controller: controller.pageController,
+            onPageChanged: controller.updatePageIndicator,
             children: const [
               onBoardingPage(
                   image: TImages.onboardingImage1,
@@ -75,21 +83,5 @@ class OnBoardingNextButton extends StatelessWidget {
   }
 }
 
-class onBoardingDotNavigation extends StatelessWidget {
-  const onBoardingDotNavigation({
-    super.key,
-  });
 
-  @override
-  Widget build(BuildContext context) {
-    return Positioned(
-      bottom: TDeviceUtils.getBottomNavigationBarHeight() * 25,
-      left: TSizes.defaultSpace,
-      child: SmoothPageIndicator(
-        controller: PageController(), 
-        count: 3,
-        effect: const ExpandingDotsEffect(activeDotColor: TColors.dark, dotHeight: 6),
-        ));
-  }
-}
 
