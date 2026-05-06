@@ -20,7 +20,14 @@ Rx<int> currentPageIndex = 0.obs;
   }
 
   //Update current index & jump to next page
-  void nextPage(){}
+  void nextPage(){
+    if(currentPageIndex.value ==2){
+      //Get.to(LogInScreen());
+    }else{
+      int page = currentPageIndex.value +1;
+      pageController.jumpToPage(page);
+    }
+  }
 
   //Update current index & jump to last page
   void skipPage(){
