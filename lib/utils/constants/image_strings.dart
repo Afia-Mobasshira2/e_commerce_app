@@ -13,7 +13,7 @@ class TImages {
   //------Onboarding Images---------
   static const String onboardingImage1 = "assets/images/searching.gif";
   static const String onboardingImage2 = "assets/images/shopping.gif";
-  static const String onboardingImage3 = "assets/images/Delivery.gif";
+  static const String onboardingImage3 = "assets/images/delivery2.gif";
   
 
 
