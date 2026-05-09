@@ -13,4 +13,8 @@ class TTexts {
   //Home
   static const String homeAppBarTitle = "Good Day for shopping";
   static const String homeAppBarSubTitle = "Afia Mobasshira";
+
+  static String loginSubTitle;
+
+  static String loginTitle;
 }
