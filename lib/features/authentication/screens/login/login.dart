@@ -45,10 +45,32 @@ class LoginScreen extends StatelessWidget {
                     TextFormField(
                       decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check),labelText: TTexts.password),
                     ),
-                    const SizedBox(height: TSizes.spaceBtwinputFields / 2,)
+                    const SizedBox(height: TSizes.spaceBtwinputFields / 2,),
+
+                    //Remember me and Forget Password
+                    Row(
+                      children: [
+                        Checkbox(value: true, onChanged: (value){}),
+                        const Text(TTexts.rememberMe),
+            
+
+                    //forget password
+                    TextButton(onPressed: (){}, child: const Text(TTexts.forgetPassword) ),
+                     ],
+                ),
+                  const SizedBox(height: TSizes.spaceBtwSections,),
+
+                  //signin button
+                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.signIn)),),  
+                     
+                  //Create account button
+                  SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: const Text(TTexts.createAccount)),)  
+
                   ],
-                ))
-            ],),
+                )
+                )
+            ],
+            ),
           ),
       ),
     );
