@@ -22,85 +22,163 @@ class LoginScreen extends StatelessWidget {
           child: Column(
             children: [
               ///logo, title a sub-Title
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Image(
-                    height: 150,
-                    image: AssetImage(dark? TImages.lightAppLogo : TImages.darkAppLogo),
-                    ),
-                    Text(TTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium,),
-                    const SizedBox(height:  TSizes.sm),
-                    Text(TTexts.loginSubTitle, style: Theme.of(context).textTheme.bodyMedium,)
+              TLoginHeader(dark: dark),
 
-                ],
-              ),
-
-              Form(
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
-                  child: Column(
-                    children: [
-                      //Email
-                      TextFormField(
-                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right),labelText: TTexts.email),
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwinputFields),
-                      
-                      //Password
-                      TextFormField(
-                        decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check),labelText: TTexts.password),
-                      ),
-                      const SizedBox(height: TSizes.spaceBtwinputFields / 2,),
-                  
-
-                      //Remember me and Forget Password
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          //Remember me
-                          Row(
-                            children: [
-                          Checkbox(value: true, onChanged: (value){}),
-                          const Text(TTexts.rememberMe),
-                            ],
-                          ),   
-                  
-                      //forget password
-                      TextButton(onPressed: (){}, child: const Text(TTexts.forgetPassword)),
-                       ],
-                  ),
-                    const SizedBox(height: TSizes.spaceBtwSections,),
-                  
-                    //sign In button
-                    SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.signIn)),),  
-                    const SizedBox(height: TSizes.spaceBtwItems,),
-                    
-                    //Create account button
-                    SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: const Text(TTexts.createAccount)),) , 
-                   
-                  
-                    ]
-                  )
-                )
-                ),
+              TLoginForm(),
 
                 //Divider
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Flexible(child: Divider(color: dark ? TColors.darkGrey: TColors.darkerGrey, thickness: 0.5, indent: 60, endIndent: 5,)),
-                    Text(TTexts.orSignInWith.capitalize!,style: Theme.of(context).textTheme.labelMedium,),
-                    Flexible(child: Divider(color: dark ? TColors.darkGrey: TColors.darkerGrey, thickness: 0.5, indent: 5, endIndent: 60,))
-                  ],
-                ),
+                TFormDivider(dark: dark),
+                    
+                    const SizedBox(height: TSizes.spaceBtwItems,),
 
                 //Footer
-
+                  TSocialButton(dark: dark)
             ],
             ),
           ),
       ),
+    );
+  }
+}
+
+class TSocialButton extends StatelessWidget {
+  const TSocialButton({
+    super.key,
+    required this.dark,
+  });
+
+  final bool dark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(decoration: BoxDecoration(border: Border.all(color: dark ? TColors.darkGrey: TColors.darkerGrey,),borderRadius: BorderRadius.circular(100)),
+        child: IconButton(
+          onPressed: (){}, icon: const Image(
+            width: TSizes.iconMd,
+            height: TSizes.iconMd,
+            image: AssetImage(TImages.google),
+            )
+          ),
+        ),
+        const SizedBox(width: TSizes.spaceBtwItems,),
+        Container(decoration: BoxDecoration(border: Border.all(color: dark ? TColors.darkGrey: TColors.darkerGrey,),borderRadius: BorderRadius.circular(100)),
+        child: IconButton(
+          onPressed: (){}, icon: const Image(
+            width: TSizes.iconMd,
+            height: TSizes.iconMd,
+            image: AssetImage(TImages.facebook),
+            )
+          ),
+        )
+      ],
+    );
+  }
+}
+
+class TFormDivider extends StatelessWidget {
+  const TFormDivider({
+    super.key,
+    required this.dark,
+  });
+
+  final bool dark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Flexible(child: Divider(color: dark ? TColors.darkGrey: TColors.darkerGrey, thickness: 0.5, indent: 60, endIndent: 5,)),
+        Text(TTexts.orSignInWith.capitalize!,style: Theme.of(context).textTheme.labelMedium,),
+        Flexible(child: Divider(color: dark ? TColors.darkGrey: TColors.darkerGrey, thickness: 0.5, indent: 5, endIndent: 60,))
+      ],
+    );
+  }
+}
+
+class TLoginForm extends StatelessWidget {
+  const TLoginForm({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(vertical: TSizes.spaceBtwSections),
+        child: Column(
+          children: [
+            //Email
+            TextFormField(
+              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right),labelText: TTexts.email),
+            ),
+            const SizedBox(height: TSizes.spaceBtwinputFields),
+            
+            //Password
+            TextFormField(
+              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check),labelText: TTexts.password),
+            ),
+            const SizedBox(height: TSizes.spaceBtwinputFields / 2,),
+        
+    
+            //Remember me and Forget Password
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                //Remember me
+                Row(
+                  children: [
+                Checkbox(value: true, onChanged: (value){}),
+                const Text(TTexts.rememberMe),
+                  ],
+                ),   
+        
+            //forget password
+            TextButton(onPressed: (){}, child: const Text(TTexts.forgetPassword)),
+             ],
+        ),
+          const SizedBox(height: TSizes.spaceBtwSections,),
+        
+          //sign In button
+          SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.signIn)),),  
+          const SizedBox(height: TSizes.spaceBtwItems,),
+          
+          //Create account button
+          SizedBox(width: double.infinity,child: OutlinedButton(onPressed: (){}, child: const Text(TTexts.createAccount)),) , 
+         
+        
+          ]
+        )
+      )
+      );
+  }
+}
+
+class TLoginHeader extends StatelessWidget {
+  const TLoginHeader({
+    super.key,
+    required this.dark,
+  });
+
+  final bool dark;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Image(
+          height: 150,
+          image: AssetImage(dark? TImages.lightAppLogo : TImages.darkAppLogo),
+          ),
+          Text(TTexts.loginTitle, style: Theme.of(context).textTheme.headlineMedium,),
+          const SizedBox(height:  TSizes.sm),
+          Text(TTexts.loginSubTitle, style: Theme.of(context).textTheme.bodyMedium,)
+    
+      ],
     );
   }
 }
