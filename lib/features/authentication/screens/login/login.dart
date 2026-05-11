@@ -45,23 +45,29 @@ class LoginScreen extends StatelessWidget {
                       TextFormField(
                         decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right),labelText: TTexts.email),
                       ),
+                      const SizedBox(height: TSizes.spaceBtwinputFields),
+                      
                       //Password
                       TextFormField(
                         decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check),labelText: TTexts.password),
                       ),
                       const SizedBox(height: TSizes.spaceBtwinputFields / 2,),
                   
+
                       //Remember me and Forget Password
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
+                          //Remember me
+                          Row(
+                            children: [
                           Checkbox(value: true, onChanged: (value){}),
                           const Text(TTexts.rememberMe),
                             ],
                           ),   
                   
                       //forget password
-                      TextButton(onPressed: (){}, child: const Text(TTexts.forgetPassword) ),
+                      TextButton(onPressed: (){}, child: const Text(TTexts.forgetPassword)),
                        ],
                   ),
                     const SizedBox(height: TSizes.spaceBtwSections,),
