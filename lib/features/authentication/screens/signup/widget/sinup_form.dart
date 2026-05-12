@@ -1,60 +1,21 @@
-import 'package:e_commerce_app/common/widgets/login_signup/form_divider.dart';
-import 'package:e_commerce_app/common/widgets/login_signup/social_button.dart';
+import 'package:e_commerce_app/features/authentication/screens/signup/widget/terms_conditions_checkbox.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get_utils/src/extensions/export.dart';
 import 'package:iconsax/iconsax.dart';
-
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-    return Scaffold(
-      appBar: AppBar(),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: EdgeInsets.all(TSizes.defaultSpace),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              //Title
-              Text(TTexts.signupTitle,style: Theme.of(context).textTheme.headlineMedium,),
-              const SizedBox(height: TSizes.spaceBtwSections,),
-
-              //Form
-              TSignupForm(dark: dark),
-              const SizedBox(height: TSizes.spaceBtwSections,),
-              
-
-              //Divider
-             TFormDivider(dividerText: TTexts.orSignUpWith.capitalize!),
-              const SizedBox(height: TSizes.spaceBtwSections,),
-
-
-              //Social Button
-              const TSocialButton()
-            ],
-          ),),
-      ),
-    );
-  }
-}
 
 class TSignupForm extends StatelessWidget {
   const TSignupForm({
     super.key,
-    required this.dark,
   });
 
-  final bool dark;
-
+ 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
+
     return Form(
       child: Column(
         children: [
@@ -111,29 +72,7 @@ class TSignupForm extends StatelessWidget {
               const SizedBox(height: TSizes.spaceBtwSections,),
     
               //Terms & conditions check box
-              Row(
-                children: [
-                  SizedBox(width: 24,height: 24, child: Checkbox(value: true, onChanged: (value){})),
-                  const SizedBox(width: TSizes.spaceBtwSections,),
-                  Text.rich(
-                    TextSpan(children: [
-                    TextSpan(text: '${TTexts.iAgreeTo} ',style: Theme.of(context).textTheme.bodySmall),
-    
-                    TextSpan(text: '${TTexts.privacyPolicy}  ',style: Theme.of(context).textTheme.bodyMedium!.apply(
-                      color: dark? TColors.white : TColors.primary,
-                      decoration: TextDecoration.underline,
-                      decorationColor: dark? TColors.white : TColors.primary,
-                    )),
-    
-                    TextSpan(text: '${TTexts.and} ',style: Theme.of(context).textTheme.bodySmall),
-                    TextSpan(text: '${TTexts.termsOfUse} ',style: Theme.of(context).textTheme.bodyMedium!.apply(
-                      color: dark? TColors.white : TColors.primary,
-                      decoration: TextDecoration.underline,
-                      decorationColor: dark? TColors.white : TColors.primary,
-                       )),
-                  ]))
-                ],
-              ),
+              const TTermsAndConditionCheckbox(),
               const SizedBox(height: TSizes.spaceBtwSections,),
     
               //sign up button
@@ -143,3 +82,4 @@ class TSignupForm extends StatelessWidget {
     );
   }
 }
+
