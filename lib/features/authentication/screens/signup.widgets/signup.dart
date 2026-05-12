@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -8,6 +9,7 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -23,6 +25,7 @@ class SignupScreen extends StatelessWidget {
               Form(
                 child: Column(
                   children: [
+                    // First & Last Name
                     Row(
                       children: [
                         Expanded(    ///textformfield expanded dia wrap na korle create account e click na korle page faka dakdai 
@@ -36,11 +39,56 @@ class SignupScreen extends StatelessWidget {
                          Expanded(
                           child: TextFormField(
                             expands: false,
-                            decoration: const InputDecoration(label: Text(TTexts.firstName),prefixIcon: Icon(Iconsax.user)),
+                            decoration: const InputDecoration(label: Text(TTexts.lastName),prefixIcon: Icon(Iconsax.user)),
                           ),
                         ),
                       ],
-                    )
+                    ),
+                        const SizedBox(height: TSizes.spaceBtwSections,),
+
+                      //User Name
+                      TextFormField(
+                            expands: false,
+                            decoration: const InputDecoration(label: Text(TTexts.userName),prefixIcon: Icon(Iconsax.user_edit)),
+                          ),
+                        
+                          //Email
+                          TextFormField(
+                            decoration: const InputDecoration(label: Text(TTexts.email),prefixIcon: Icon(Iconsax.direct)),
+                          ),
+                        const SizedBox(height: TSizes.spaceBtwSections,),
+                          
+
+                          //Phone Number
+                          TextFormField(
+                            decoration: const InputDecoration(label: Text(TTexts.phoneNo),prefixIcon: Icon(Iconsax.call)),
+                          ),
+                        const SizedBox(height: TSizes.spaceBtwSections,),
+
+                          //Password
+                          TextFormField(
+                            obscureText: true,
+                            decoration: const InputDecoration(
+                              label: Text(TTexts.password),
+                              prefixIcon: Icon(Iconsax.password_check),
+                              suffixIcon: Icon(Iconsax.eye_slash)),
+                          ),
+                        const SizedBox(height: TSizes.spaceBtwSections,),
+
+                        //Terms & conditions check box
+                        Row(
+                          children: [
+                            SizedBox(width: 24,height: 24, child: Checkbox(value: true, onChanged: (value){})),
+                            const SizedBox(width: TSizes.spaceBtwSections,),
+                            Text.rich(
+                              TextSpan(children: [
+                              TextSpan(text: '${TTexts.iAgreeTo}',style: Theme.of(context).textTheme.bodyMedium)
+
+                              TextSpan(text: '${TTexts.privacyPolicy}')
+                              ]
+                              ))
+                          ],
+                        )
                 ],))
             ],
           ),),
