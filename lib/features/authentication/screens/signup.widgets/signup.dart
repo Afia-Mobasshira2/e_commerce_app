@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -16,6 +17,7 @@ class SignupScreen extends StatelessWidget {
         child: Padding(
           padding: EdgeInsets.all(TSizes.defaultSpace),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               //Title
               Text(TTexts.signupTitle,style: Theme.of(context).textTheme.headlineMedium,),
@@ -51,6 +53,8 @@ class SignupScreen extends StatelessWidget {
                             expands: false,
                             decoration: const InputDecoration(label: Text(TTexts.userName),prefixIcon: Icon(Iconsax.user_edit)),
                           ),
+                        const SizedBox(height: TSizes.spaceBtwSections,),
+
                         
                           //Email
                           TextFormField(
@@ -82,13 +86,26 @@ class SignupScreen extends StatelessWidget {
                             const SizedBox(width: TSizes.spaceBtwSections,),
                             Text.rich(
                               TextSpan(children: [
-                              TextSpan(text: '${TTexts.iAgreeTo}',style: Theme.of(context).textTheme.bodyMedium)
+                              TextSpan(text: '${TTexts.iAgreeTo} ',style: Theme.of(context).textTheme.bodySmall),
 
-                              TextSpan(text: '${TTexts.privacyPolicy}')
-                              ]
-                              ))
+                              TextSpan(text: '${TTexts.privacyPolicy}  ',style: Theme.of(context).textTheme.bodyMedium!.apply(
+                                color: dark? TColors.white : TColors.primary,
+                                decoration: TextDecoration.underline,
+                                decorationColor: dark? TColors.white : TColors.primary,
+                              )),
+
+                              TextSpan(text: '${TTexts.and} ',style: Theme.of(context).textTheme.bodySmall),
+                              TextSpan(text: '${TTexts.termsOfUse} ',style: Theme.of(context).textTheme.bodyMedium!.apply(
+                                color: dark? TColors.white : TColors.primary,
+                                decoration: TextDecoration.underline,
+                                decorationColor: dark? TColors.white : TColors.primary,
+                                 )),
+                            ]))
                           ],
-                        )
+                        ),
+                        //sign up button
+
+
                 ],))
             ],
           ),),
