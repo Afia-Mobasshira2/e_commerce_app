@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/widgets/success_screen/success_screen.dart';
 import 'package:e_commerce_app/features/authentication/screens/login/login.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -40,7 +41,7 @@ class VerifyEmailScreen extends StatelessWidget {
                    const SizedBox(height: TSizes.spaceBtwSections,),
 
                   //buttons
-                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.tContinue)),),
+                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(() => SuccessScreen()), child: const Text(TTexts.tContinue,),)),
                    const SizedBox(height: TSizes.spaceBtwItems,),
 
                   SizedBox(width: double.infinity,child: TextButton(onPressed: (){}, child: const Text(TTexts.resendEmail,),))
