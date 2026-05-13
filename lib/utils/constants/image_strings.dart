@@ -15,6 +15,9 @@ class TImages {
   static const String onboardingImage2 = "assets/images/shopping.gif";
   static const String onboardingImage3 = "assets/images/delivery2.gif";
   
+  //signup verified & success 
+  static const String verify = "assets/images/Congratulations.gif";
+  static const String success = "assets/images/Success.gif";
 
 
 }
