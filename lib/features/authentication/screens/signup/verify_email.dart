@@ -34,16 +34,16 @@ class VerifyEmailScreen extends StatelessWidget {
                   //Title & Subtitle
                     Text(TTexts.confirmEmail,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
                    const SizedBox(height: TSizes.spaceBtwItems,),
-                    Text(TTexts.confirmEmail,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
+                    Text('support@codingwithAfy.com',style: Theme.of(context).textTheme.labelLarge, textAlign: TextAlign.center,),
                    const SizedBox(height: TSizes.spaceBtwItems,),
-                    Text(TTexts.confirmEmail,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
+                    Text(TTexts.confirmEmailSubTitle,style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,),
                    const SizedBox(height: TSizes.spaceBtwSections,),
 
                   //buttons
                   SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.tContinue)),),
                    const SizedBox(height: TSizes.spaceBtwItems,),
 
-                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.resendEmail)),)
+                  SizedBox(width: double.infinity,child: TextButton(onPressed: (){}, child: const Text(TTexts.resendEmail,),))
                 ],
               ),
               ),
