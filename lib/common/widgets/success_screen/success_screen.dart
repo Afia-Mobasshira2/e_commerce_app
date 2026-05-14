@@ -9,7 +9,15 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
 class SuccessScreen extends StatelessWidget {
-  const SuccessScreen({super.key});
+  const SuccessScreen({super.key, 
+  required this.image, 
+  required this.title, 
+  required this.SubTitle,
+  required this.VoidCallback,
+  required this.onPressed});
+
+  final String image,title,SubTitle;
+  final VoidCallback,onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -20,19 +28,20 @@ class SuccessScreen extends StatelessWidget {
           child: Column(
             children: [
                     //Image
-                    Image(image: AssetImage(TImages.success),
+                    Image(image: AssetImage(image),
                     width: THelperFunctions.screenWidth() * 0.4,
                     ),
                    const SizedBox(height: TSizes.spaceBtwSections,),
 
                   //Title & Subtitle
-                    Text(TTexts.yourAccountCreatedTitle,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
+                    Text(title,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
                    const SizedBox(height: TSizes.spaceBtwItems,),
-                    Text(TTexts.yourAccountCreatedSubTitle,style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,),
+                    Text(SubTitle,style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,),
                    const SizedBox(height: TSizes.spaceBtwItems,),
           
                   //buttons
-                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: () => Get.to(() => LoginScreen()), child: const Text(TTexts.tContinue,),)),
+                  SizedBox(width: double.infinity,
+                  child: ElevatedButton(onPressed: onPressed, child: const Text(TTexts.tContinue,),)),
                    const SizedBox(height: TSizes.spaceBtwItems,),
             ],
           ),
