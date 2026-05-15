@@ -21,7 +21,7 @@ class TLoginForm extends StatelessWidget {
           children: [
             //Email
             TextFormField(
-              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right),labelText: TTexts.email),
+              decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right),suffixIcon: Icon(Icons.email),labelText: TTexts.email),
             ),
             const SizedBox(height: TSizes.spaceBtwinputFields),
             
