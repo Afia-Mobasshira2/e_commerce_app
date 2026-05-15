@@ -1,11 +1,14 @@
+import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
+import 'package:e_commerce_app/utils/constants/text_strings.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/get_navigation.dart';
 
-class ForgetPassword extends StatelessWidget {
-  const ForgetPassword({super.key});
+class ResetPassword extends StatelessWidget {
+  const ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,21 +23,23 @@ class ForgetPassword extends StatelessWidget {
           child: Column(
             children: [
                //Image
-                      Image(image: AssetImage(image),
+                      Image(image: const AssetImage(TImages.resetPassword),
                       width: THelperFunctions.screenWidth() * 0.4,
                       ),
                      const SizedBox(height: TSizes.spaceBtwSections,),
         
                     //Title & Subtitle
-                      Text(title,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
+                      Text(TTexts.changeYourPasswordTitle,style: Theme.of(context).textTheme.headlineMedium, textAlign: TextAlign.center,),
                      const SizedBox(height: TSizes.spaceBtwItems,),
-                      Text(SubTitle,style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,),
-                     const SizedBox(height: TSizes.spaceBtwItems,),
+                      Text(TTexts.changeYourPasswordSubTitle,style: Theme.of(context).textTheme.labelMedium, textAlign: TextAlign.center,),
+                     const SizedBox(height: TSizes.spaceBtwSections,),
             
                     //buttons
                     SizedBox(width: double.infinity,
-                    child: ElevatedButton(onPressed: onPressed, child: const Text(TTexts.tContinue,),)),
+                    child: ElevatedButton(onPressed: (){}, child: const Text(TTexts.done,),)),
                      const SizedBox(height: TSizes.spaceBtwItems,),
+                     SizedBox(width: double.infinity,
+                    child: TextButton(onPressed: (){}, child: const Text(TTexts.resendEmail,),)),
         
             ],
           ),
