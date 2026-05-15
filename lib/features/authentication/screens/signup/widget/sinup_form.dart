@@ -52,7 +52,7 @@ class TSignupForm extends StatelessWidget {
               
                 //Email
                 TextFormField(
-                  decoration: const InputDecoration(label: Text(TTexts.email),prefixIcon: Icon(Iconsax.direct)),
+                  decoration: const InputDecoration(label: Text(TTexts.email),prefixIcon: Icon(Iconsax.direct),suffixIcon: Icon(Icons.email)),
                 ),
               const SizedBox(height: TSizes.spaceBtwSections,),
                 
