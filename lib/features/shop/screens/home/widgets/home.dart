@@ -1,5 +1,6 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
+import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -12,24 +13,8 @@ class HomeScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            TCustomCurveEdges()
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class TCustomCurveEdges extends StatelessWidget {
-  const TCustomCurveEdges({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ClipPath(
-      clipper: TCustomCurvedEdges(),
-      child: Container(
+            TCustomCurveEdges( 
+              child: Container(
         color: TColors.primary,
         padding: const EdgeInsets.all(0),
         child: SizedBox(
@@ -43,8 +28,13 @@ class TCustomCurveEdges extends StatelessWidget {
             ],
           ),
         ),
+      ),),
+          ],
+        ),
       ),
     );
   }
 }
+
+
 
