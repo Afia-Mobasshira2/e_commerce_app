@@ -15,30 +15,33 @@ class HomeScreen extends StatelessWidget {
               padding: const EdgeInsets.all(0),
               child: Stack(
                 children: [
-                  Container(
-                    width: 400,
-                    height: 400,
-                    padding: EdgeInsets.all(0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(400),
-                      color: TColors.textWhite.withOpacity(0.1),
-                    ),
-                  ),
+                  TCircularContainer(),
 
-                  Container(
-                    width: 400,
-                    height: 400,
-                    padding: EdgeInsets.all(0),
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(400),
-                      color: TColors.textWhite.withOpacity(0.1),
-                    ),
-                  ),
+                  
                 ],
               ),
             )
           ],
         ),
+      ),
+    );
+  }
+}
+
+class TCircularContainer extends StatelessWidget {
+  const TCircularContainer({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 400,
+      height: 400,
+      padding: EdgeInsets.all(0),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(400),
+        color: TColors.textWhite.withOpacity(0.1),
       ),
     );
   }
