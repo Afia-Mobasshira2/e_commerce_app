@@ -18,7 +18,7 @@ class TImages {
   //signup verified & success 
   static const String verify = "assets/images/Congratulations.gif";
   static const String success = "assets/images/Success.gif";
-  static const String resetPassword = "assets/images/Reset_Password.gif";
+  static const String resetPassword = "assets/images/ResetPassword.gif";
 
 
 }

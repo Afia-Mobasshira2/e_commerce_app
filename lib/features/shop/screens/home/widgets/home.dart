@@ -24,6 +24,16 @@ class HomeScreen extends StatelessWidget {
                       color: TColors.textWhite.withOpacity(0.1),
                     ),
                   ),
+
+                  Container(
+                    width: 400,
+                    height: 400,
+                    padding: EdgeInsets.all(0),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(400),
+                      color: TColors.textWhite.withOpacity(0.1),
+                    ),
+                  ),
                 ],
               ),
             )
