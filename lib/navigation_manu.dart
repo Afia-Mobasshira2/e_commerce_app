@@ -40,5 +40,5 @@ class NavigationManu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs; ///obs being observed
 
-  final screens = [Container(color: Colors.blue.shade100,child: const HomeScreen(),),Container(color: Colors.green.shade100),Container(color: Colors.deepPurple.shade100),Container(color: Colors.orange.shade100,)];
+  final screens = [const HomeScreen(),Container(color: Colors.green.shade100),Container(color: Colors.deepPurple.shade100),Container(color: Colors.orange.shade100,)];
 }
