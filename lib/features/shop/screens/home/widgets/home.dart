@@ -12,6 +12,7 @@ class HomeScreen extends StatelessWidget {
         child: Column(
           children: [
             ClipPath(
+              clipper: ,
               child: Container(
                 color: TColors.primary,
                 padding: const EdgeInsets.all(0),
