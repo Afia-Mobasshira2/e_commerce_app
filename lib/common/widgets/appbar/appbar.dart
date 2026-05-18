@@ -1,0 +1,15 @@
+import 'package:e_commerce_app/utils/device/device_utility.dart';
+import 'package:flutter/material.dart';
+
+class TAppBar extends StatelessWidget implements PreferredSize{
+  const TAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+  
+  @override
+  // TODO: implement preferredSize
+  Size get preferredSize => Size.fromHeight(TDeviceUtils.getAppBarHeight());
+}
