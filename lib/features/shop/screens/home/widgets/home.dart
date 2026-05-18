@@ -3,6 +3,7 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/container/circular_c
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
@@ -37,38 +38,6 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TCartCounterIcon extends StatelessWidget {
-  const TCartCounterIcon({
-    super.key, required this.iconColor, required this.onPressed,
-  });
-
-  final Color iconColor;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    return Stack(
-      children: [
-    IconButton(onPressed: (){}, icon: Icon(Iconsax.shopping_bag,color: iconColor,)),
-    Positioned(
-      right: 0,
-    child: Container(
-      width: 18,
-      height: 18,
-      decoration: BoxDecoration(
-        color: TColors.black,
-        borderRadius: BorderRadius.circular(100),
-      ),
-      child: Center(
-        child: Text('2',style: Theme.of(context).textTheme.labelLarge!.apply(color: TColors.white,fontSizeFactor: 0.8),),///fontSizeFactor: 0.8 na dila 2 likha boro dakhai
-      ),
-    ),
-    ),
-                      ],
-                    );
   }
 }
 
