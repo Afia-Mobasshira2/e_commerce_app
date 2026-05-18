@@ -28,7 +28,7 @@ class HomeScreen extends StatelessWidget {
                     ],
                   ),
                   actions: [
-                    TCartCounterIcon(),
+                    TCartCounterIcon(onPressed: (){}, iconColor: TColors.white,),
               ],
                 ),
               ],
@@ -42,14 +42,17 @@ class HomeScreen extends StatelessWidget {
 
 class TCartCounterIcon extends StatelessWidget {
   const TCartCounterIcon({
-    super.key,
+    super.key, required this.iconColor, required this.onPressed,
   });
+
+  final Color iconColor;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
-    IconButton(onPressed: (){}, icon: const Icon(Iconsax.shopping_bag,color: TColors.white,)),
+    IconButton(onPressed: (){}, icon: Icon(Iconsax.shopping_bag,color: iconColor,)),
     Positioned(
       right: 0,
     child: Container(
