@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
+import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
                 const SizedBox(height: TSizes.defaultSpace,),
 
                 //Search bar
-                TSearchContainer(text: '',)
+                TSearchContainer(text: 'Search in Store',)
               ],
             ),),
           ],
@@ -39,41 +40,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-class TSearchContainer extends StatelessWidget {
-  const TSearchContainer({
-    super.key, required this.text, this.icon, this.showBackground = true, this.showBorder =true,
-  });
-
-  final String text;
-  final IconData? icon;
-  final bool showBackground, showBorder;
-
-  @override
-  Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: TSizes.defaultSpace),
-      child: Container(
-        width: TDeviceUtils.getScreenWidth(context),
-        padding: EdgeInsets.all(TSizes.md),
-        decoration: BoxDecoration(
-          color: showBackground ? dark ? TColors.dark : TColors.light : Colors.transparent,
-          borderRadius: BorderRadius.circular(TSizes.cardRadiusLg),
-          border: showBorder ? Border.all(color: TColors.grey) : null,
-        ),
-        child: Row(
-          children: [
-            Icon(Iconsax.search_normal, color: TColors.darkerGrey,),
-            const SizedBox(width: TSizes.spaceBtwItems,),
-            Text('Search in Store',style: Theme.of(context).textTheme.bodySmall),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-
 
