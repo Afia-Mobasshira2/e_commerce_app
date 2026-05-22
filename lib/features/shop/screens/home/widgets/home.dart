@@ -44,7 +44,26 @@ class HomeScreen extends StatelessWidget {
                        const SizedBox(height: TSizes.spaceBtwItems,),
 
                        //Categories
-                       ListView()
+                       ListView.builder(
+                        itemCount: 6,
+                        scrollDirection: Axis.horizontal,
+                        itemBuilder: (_, index){
+                          Column(
+                            children: [
+                              Container(
+                                width: 56,
+                                height: 56,
+                                padding: const EdgeInsets.all(TSizes.sm),
+                                decoration: BoxDecoration(
+                                  color: TColors.white,
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                              )
+                              ],
+                          );
+                        }, 
+                         
+                        )
                     ],
                   ),
                   )
