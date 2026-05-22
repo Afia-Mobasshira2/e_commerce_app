@@ -1,5 +1,7 @@
 //this class containes all the app text in String format
 
+
+
 class TImages {
 
 //App logos
@@ -20,5 +22,16 @@ class TImages {
   static const String success = "assets/images/Success.gif";
   static const String resetPassword = "assets/images/ResetPassword.gif";
 
+  //Category Icon
+  static const String sportIcon = "assets/icons/sportIcon.png";
+  static const String clothIcon = "assets/icons/clothIcon.png";
+  static const String shoeIcon = "assets/icons/shoesIcon.png";
+  static const String cosmeticsIcon = "assets/icons/cosmeticIcon.png";
+  static const String animalIcon = "assets/icons/animalIcon.png";
+  static const String toyIcon = "assets/icons/toys.png";
+  static const String furnitureIcon = "assets/icons/furniture.png";
+  static const String jewelaryIcon = "assets/icons/jewelary.png";
+  static const String electronicsIcon = "assets/icons/electro.png";
+ 
 
 }
