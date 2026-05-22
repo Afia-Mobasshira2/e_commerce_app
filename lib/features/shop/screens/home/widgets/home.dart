@@ -8,6 +8,7 @@ import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart'
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
@@ -58,15 +59,18 @@ class HomeScreen extends StatelessWidget {
                                   color: TColors.white,
                                   borderRadius: BorderRadius.circular(100),
                                 ),
+                                child: const Center(
+                                  child: Image(image: AssetImage(TImages.sportIcon),fit: BoxFit.cover,color: TColors.dark,),
+                                ),
                               )
-                              ],
+                            ],
                           );
                         }, 
                          
                         )
                     ],
                   ),
-                  )
+                )
 
               ],
             ),),
