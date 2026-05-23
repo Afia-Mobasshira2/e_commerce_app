@@ -41,33 +41,54 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.only(left: TSizes.defaultSpace),
                   child: Column(
                     children: [
-                      TSectionHeading(title: 'Popular Categories',showActionButton: false,),
+                      TSectionHeading(title: 'Popular Categories',showActionButton: false,textColor: Colors.white,),
                        const SizedBox(height: TSizes.spaceBtwItems,),
 
                        //Categories
-                       ListView.builder(
-                        itemCount: 6,
-                        scrollDirection: Axis.horizontal,
-                        itemBuilder: (_, index){
-                          Column(
-                            children: [
-                              Container(
-                                width: 56,
-                                height: 56,
-                                padding: const EdgeInsets.all(TSizes.sm),
-                                decoration: BoxDecoration(
-                                  color: TColors.white,
-                                  borderRadius: BorderRadius.circular(100),
-                                ),
-                                child: const Center(
-                                  child: Image(image: AssetImage(TImages.sportIcon),fit: BoxFit.cover,color: TColors.dark,),
-                                ),
-                              )
-                            ],
-                          );
-                        }, 
-                         
-                        )
+                       SizedBox(
+                        height: 80,
+                         child: ListView.builder(
+                          shrinkWrap: true,
+                          itemCount: 6,
+                          scrollDirection: Axis.horizontal,
+                          itemBuilder: (_, index){
+                            return Padding(
+                              padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
+                              child: Column(
+                                children: [
+                                                       
+                                  ///Circular Icon
+                                  Container(
+                                    width: 56,
+                                    height: 56,
+                                    padding: const EdgeInsets.all(TSizes.sm),
+                                    decoration: BoxDecoration(
+                                      color: TColors.white,
+                                      borderRadius: BorderRadius.circular(100),
+                                    ),
+                                    child: const Center(
+                                      child: Image(image: AssetImage(TImages.sportIcon),fit: BoxFit.cover,color: TColors.dark,),
+                                    ),
+                                  ),
+                                                       
+                                  //Text
+                                  const SizedBox(height: TSizes.spaceBtwItems / 2),
+                                  SizedBox(
+                                    width: 55,
+                                    child: Text(
+                                      'Shoe Category',
+                                      style: Theme.of(context).textTheme.labelMedium!.apply(color: TColors.white),
+                                      maxLines: 1,
+                                      overflow: TextOverflow.ellipsis,
+                                    ),
+                                  )
+                                ],
+                              ),
+                            );
+                          }, 
+                           
+                          ),
+                       )
                     ],
                   ),
                 )
