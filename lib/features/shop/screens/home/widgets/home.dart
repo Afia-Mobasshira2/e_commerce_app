@@ -87,6 +87,8 @@ class TVerticalImageText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
+
     return GestureDetector(
       onTap : onTap,
       child: Padding(
@@ -100,11 +102,11 @@ class TVerticalImageText extends StatelessWidget {
               height: 56,
               padding: const EdgeInsets.all(TSizes.sm),
               decoration: BoxDecoration(
-                color: TColors.white,
+                color: backgroundColor ?? (dark ? TColors.black : TColors.white),
                 borderRadius: BorderRadius.circular(100),
               ),
               child:  Center(
-                child: Image(image: AssetImage(image),fit: BoxFit.cover,color: TColors.dark,),
+                child: Image(image: AssetImage(image),fit: BoxFit.cover,color: dark? TColors.light : TColors.dark,),
               ),
             ),
                                  
