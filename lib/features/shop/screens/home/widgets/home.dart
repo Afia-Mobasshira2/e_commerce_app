@@ -8,6 +8,7 @@ import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
+import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -46,18 +47,7 @@ class HomeScreen extends StatelessWidget {
                        const SizedBox(height: TSizes.spaceBtwItems,),
 
                        //Categories
-                       SizedBox(
-                        height: 80,
-                         child: ListView.builder(
-                          shrinkWrap: true,
-                          itemCount: 6,
-                          scrollDirection: Axis.horizontal,
-                          itemBuilder: (_, index){
-                            return TVerticalImageText(image: TImages.shoeIcon, title: 'Shoes', onTap: (){},);
-                          }, 
-                           
-                          ),
-                       )
+                       THomeCategories()
                     ],
                   ),
                 )
