@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
                           itemCount: 6,
                           scrollDirection: Axis.horizontal,
                           itemBuilder: (_, index){
-                            return TVerticalImageText();
+                            return TVerticalImageText(image: TImages.shoeIcon, title: 'Shoes', onTap: (){},);
                           }, 
                            
                           ),
@@ -75,8 +75,8 @@ class TVerticalImageText extends StatelessWidget {
     super.key, 
     required this.image, 
     required this.title, 
-    required this.textColor, 
-    this.backgroundColor, 
+     this.textColor = TColors.white, 
+    this.backgroundColor = TColors.white, 
     this.onTap,
   });
 
@@ -87,37 +87,40 @@ class TVerticalImageText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
-      child: Column(
-        children: [
-                               
-          ///Circular Icon
-          Container(
-            width: 56,
-            height: 56,
-            padding: const EdgeInsets.all(TSizes.sm),
-            decoration: BoxDecoration(
-              color: TColors.white,
-              borderRadius: BorderRadius.circular(100),
+    return GestureDetector(
+      onTap : onTap,
+      child: Padding(
+        padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
+        child: Column(
+          children: [
+                                 
+            ///Circular Icon
+            Container(
+              width: 56,
+              height: 56,
+              padding: const EdgeInsets.all(TSizes.sm),
+              decoration: BoxDecoration(
+                color: TColors.white,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child:  Center(
+                child: Image(image: AssetImage(image),fit: BoxFit.cover,color: TColors.dark,),
+              ),
             ),
-            child: const Center(
-              child: Image(image: AssetImage(TImages.sportIcon),fit: BoxFit.cover,color: TColors.dark,),
-            ),
-          ),
-                               
-          //Text
-          const SizedBox(height: TSizes.spaceBtwItems / 2),
-          SizedBox(
-            width: 55,
-            child: Text(
-              'Shoe Category',
-              style: Theme.of(context).textTheme.labelMedium!.apply(color: TColors.white),
-              maxLines: 1,
-              overflow: TextOverflow.ellipsis,
-            ),
-          )
-        ],
+                                 
+            //Text
+            const SizedBox(height: TSizes.spaceBtwItems / 2),
+            SizedBox(
+              width: 55,
+              child: Text(
+                'Shoe Category',
+                style: Theme.of(context).textTheme.labelMedium!.apply(color: textColor),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+              ),
+            )
+          ],
+        ),
       ),
     );
   }
