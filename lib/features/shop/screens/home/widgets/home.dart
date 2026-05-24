@@ -4,6 +4,7 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_he
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
@@ -63,64 +64,6 @@ class HomeScreen extends StatelessWidget {
 
               ],
             ),),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class TVerticalImageText extends StatelessWidget {
-  const TVerticalImageText({
-    super.key, 
-    required this.image, 
-    required this.title, 
-     this.textColor = TColors.white, 
-    this.backgroundColor = TColors.white, 
-    this.onTap,
-  });
-
-  final String image,title;
-  final Color textColor;
-  final Color? backgroundColor;
-  final void Function()? onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final dark = THelperFunctions.isDarkMode(context);
-
-    return GestureDetector(
-      onTap : onTap,
-      child: Padding(
-        padding: const EdgeInsets.only(right: TSizes.spaceBtwItems),
-        child: Column(
-          children: [
-                                 
-            ///Circular Icon
-            Container(
-              width: 56,
-              height: 56,
-              padding: const EdgeInsets.all(TSizes.sm),
-              decoration: BoxDecoration(
-                color: backgroundColor ?? (dark ? TColors.black : TColors.white),
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child:  Center(
-                child: Image(image: AssetImage(image),fit: BoxFit.cover,color: dark? TColors.light : TColors.dark,),
-              ),
-            ),
-                                 
-            //Text
-            const SizedBox(height: TSizes.spaceBtwItems / 2),
-            SizedBox(
-              width: 55,
-              child: Text(
-                'Shoe Category',
-                style: Theme.of(context).textTheme.labelMedium!.apply(color: textColor),
-                maxLines: 1,
-                overflow: TextOverflow.ellipsis,
-              ),
-            )
           ],
         ),
       ),
