@@ -72,8 +72,18 @@ class HomeScreen extends StatelessWidget {
 
 class TVerticalImageText extends StatelessWidget {
   const TVerticalImageText({
-    super.key,
+    super.key, 
+    required this.image, 
+    required this.title, 
+    required this.textColor, 
+    this.backgroundColor, 
+    this.onTap,
   });
+
+  final String image,title;
+  final Color textColor;
+  final Color? backgroundColor;
+  final void Function()? onTap;
 
   @override
   Widget build(BuildContext context) {
