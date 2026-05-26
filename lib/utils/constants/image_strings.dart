@@ -34,8 +34,10 @@ class TImages {
   static const String electronicsIcon = "assets/icons/electro.png";
   
   //Banner
-  static const String promoBanner1 = "";
-  static const String promoBanner2 = "";
-  static const String promoBanner3 = "";
+  static const String promoBanner1 = "assets/banners/11.png";
+  static const String promoBanner12 = "assets/banners/12.png";
+  static const String promoBanner2 = "assets/banners/2.png";
+  static const String promoBanner3 = "assets/banners/3.png";
+  
 
 }
