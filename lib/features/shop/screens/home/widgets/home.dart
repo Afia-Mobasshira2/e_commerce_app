@@ -55,8 +55,17 @@ class HomeScreen extends StatelessWidget {
               ],
             ),
             ),
+
             //body
-            Container(),
+            Padding(
+              padding: const EdgeInsets.all(TSizes.defaultSpace),
+              child: Container(
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(TSizes.md),
+                  child: const Image(image: AssetImage(TImages.promoBanner2))),
+              ),
+            ),
           ],
         ),
       ),
