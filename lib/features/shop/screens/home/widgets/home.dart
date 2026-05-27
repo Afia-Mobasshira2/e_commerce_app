@@ -24,6 +24,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.grey[300],
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -58,12 +59,15 @@ class HomeScreen extends StatelessWidget {
 
             //body
             Padding(
+              
               padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Container(
-                 //decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
-                color: Colors.red,
+              decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
+                //color: Colors.red,
               width: double.infinity,
-              height: 160,    // Enforces the height constraint
+              height: 150, // This strictly forces the layout box height
+              child: ClipRRect(
+              borderRadius: BorderRadius.circular(TSizes.md),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(TSizes.md),
                   child:  Image(
@@ -73,6 +77,7 @@ class HomeScreen extends StatelessWidget {
                   ),
               ),
             ),
+            )
           ],
         ),
       ),
