@@ -63,7 +63,13 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(TSizes.md),
-                  child: const Image(image: AssetImage(TImages.promoBanner2))),
+                  child:  Image(
+                    height: 150, // 1. Give the image a specific height
+                    width: double.infinity, // 2. Force it to fill the width of the screen
+                    image: const AssetImage(TImages.promoBanner2),
+                    fit: BoxFit.cover, // 3. This forces the image to crop/scale into the box
+                    ),
+                  ),
               ),
             ),
           ],
