@@ -60,14 +60,15 @@ class HomeScreen extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(TSizes.defaultSpace),
               child: Container(
-                decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
+                 //decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
+                color: Colors.red,
+              width: double.infinity,
+              height: 160,    // Enforces the height constraint
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(TSizes.md),
                   child:  Image(
-                    height: 150, // 1. Give the image a specific height
-                    width: double.infinity, // 2. Force it to fill the width of the screen
                     image: const AssetImage(TImages.promoBanner2),
-                    fit: BoxFit.cover, // 3. This forces the image to crop/scale into the box
+                    fit: BoxFit.cover,     /// 3. This forces the image to crop/scale into the box
                     ),
                   ),
               ),
