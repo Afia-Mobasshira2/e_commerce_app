@@ -72,8 +72,27 @@ class HomeScreen extends StatelessWidget {
 
 class TRoundedImage extends StatelessWidget {
   const TRoundedImage({
-    super.key,
+    super.key, 
+    this.width, 
+    this.height, 
+    required this.imageUrl, 
+    required this.applyImageRadius, 
+    this.border, 
+    required this.backgroundColor, 
+    this.fit, this.padding, 
+    required this.isNetworkImage, 
+    this.onPressed,
   });
+
+  final double? width,height;
+  final String imageUrl;
+  final bool applyImageRadius;
+  final BoxBorder? border;
+  final Color backgroundColor;
+  final BoxFit? fit;
+  final EdgeInsetsGeometry? padding;
+  final bool isNetworkImage;
+  final VoidCallback? onPressed; 
 
   @override
   Widget build(BuildContext context) {
