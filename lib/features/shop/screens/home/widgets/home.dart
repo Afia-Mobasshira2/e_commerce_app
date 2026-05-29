@@ -61,27 +61,37 @@ class HomeScreen extends StatelessWidget {
             Padding(
               
               padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: Container(
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
-                //color: Colors.red,
-              width: double.infinity,
-              height: 150, // This strictly forces the layout box height
-              child: ClipRRect(
-              borderRadius: BorderRadius.circular(TSizes.md),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(TSizes.md),
-                  child:  Image(
-                    image: const AssetImage(TImages.promoBanner2),
-                    fit: BoxFit.cover,     /// 3. This forces the image to crop/scale into the box
-                    ),
-                  ),
-              ),
-            ),
+              child: TRoundedImage(),
             )
           ],
         ),
       ),
     );
+  }
+}
+
+class TRoundedImage extends StatelessWidget {
+  const TRoundedImage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+    decoration: BoxDecoration(borderRadius: BorderRadius.circular(TSizes.md)),
+      //color: Colors.red,
+    width: double.infinity,
+    height: 150, // This strictly forces the layout box height
+   
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(TSizes.md),
+        child:  Image(
+          image: const AssetImage(TImages.promoBanner2),
+          fit: BoxFit.contain,     /// 3. This forces the image to crop/scale into the box
+          ),
+        ),
+    
+      );
   }
 }
 
