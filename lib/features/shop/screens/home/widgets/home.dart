@@ -61,8 +61,8 @@ class HomeScreen extends StatelessWidget {
             //body
             Padding(
               
-              padding: const EdgeInsets.all(TSizes.defaultSpace),
-              child: TRoundedImage(imageUrl: '',),
+              padding: EdgeInsets.all(TSizes.defaultSpace),
+              child: TRoundedImage(imageUrl: TImages.promoBanner1,),
             )
           ],
         ),
@@ -77,12 +77,14 @@ class TRoundedImage extends StatelessWidget {
     this.width, 
     this.height, 
     required this.imageUrl, 
-    required this.applyImageRadius, 
+    this.applyImageRadius = true, 
     this.border, 
-    required this.backgroundColor, 
-    this.fit, this.padding, 
-    required this.isNetworkImage, 
-    this.onPressed,
+    this.backgroundColor = TColors.light, 
+    this.fit = BoxFit.cover, 
+    this.padding, 
+    this.isNetworkImage = false, 
+    this.onPressed, 
+    this.borderRadius = TSizes.md,
   });
 
   final double? width,height;
