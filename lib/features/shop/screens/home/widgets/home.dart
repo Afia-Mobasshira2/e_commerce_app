@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/circular_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
@@ -11,6 +12,7 @@ import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categories.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/constants/text_strings.dart';
@@ -63,8 +65,35 @@ class HomeScreen extends StatelessWidget {
             Padding(
               
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TRoundedImage(imageUrl: TImages.promoBanner1,),
-            )
+              child: Column(
+                children: [
+                  CarouselSlider(
+                     options: CarouselOptions(
+                    viewportFraction: 0.8,
+                      ),
+                    items: const [
+                     TRoundedImage(imageUrl: TImages.promoBanner1,),
+                     TRoundedImage(imageUrl: TImages.promoBanner12,),
+                     TRoundedImage(imageUrl: TImages.promoBanner2,),
+                     TRoundedImage(imageUrl: TImages.promoBanner3,),
+                     ],
+                  
+                  ),
+               
+               SizedBox(height: TSizes.spaceBtwSections,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center, // Centering the dots
+                children: [
+                for(int i = 0;i < 3; i ++) 
+                 TCircularContainer(width: 20, height: 20,margin: EdgeInsets.only(right: 10),
+                 backgroundColor: Colors.green,
+                 child: const SizedBox(), // Forces the container to render its dimensions
+                 ),
+              ],
+              ),
+               ],
+               )
+            ),
           ],
         ),
       ),
