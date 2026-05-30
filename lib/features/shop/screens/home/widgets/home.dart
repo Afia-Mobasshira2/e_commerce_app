@@ -84,8 +84,8 @@ class HomeScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center, // Centering the dots
                 children: [
-                for(int i = 0;i < 3; i ++) 
-                 TCircularContainer(width: 20, height: 20,margin: EdgeInsets.only(right: 10),
+                for(int i = 0;i < 4; i ++) 
+                 TCircularContainer(width: 20, height: 4,margin: EdgeInsets.only(right: 10),
                  backgroundColor: Colors.green,
                  child: const SizedBox(), // Forces the container to render its dimensions
                  ),
