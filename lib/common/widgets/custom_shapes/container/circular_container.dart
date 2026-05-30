@@ -27,10 +27,10 @@ class TCircularContainer extends StatelessWidget {
       width: width,
       height: height,
       margin: margin,
-      padding: EdgeInsets.all(0),
+      padding: EdgeInsets.all(padding),  // <-- Useing the padding variable
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(400),
-        color: TColors.textWhite.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(radius),// <-- Use the radius variable
+        color: backgroundColor, // <-- Use the passed backgroundColor variable
       ),
       child: child,
     );
