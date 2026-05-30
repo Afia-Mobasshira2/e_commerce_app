@@ -63,41 +63,50 @@ class HomeScreen extends StatelessWidget {
 
             //body
             Padding(
-              
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: Column(
-                children: [
-                  CarouselSlider(
-                     options: CarouselOptions(
-                    viewportFraction: 0.8,
-                      ),
-                    items: const [
-                     TRoundedImage(imageUrl: TImages.promoBanner1,),
-                     TRoundedImage(imageUrl: TImages.promoBanner12,),
-                     TRoundedImage(imageUrl: TImages.promoBanner2,),
-                     TRoundedImage(imageUrl: TImages.promoBanner3,),
-                     ],
-                  
-                  ),
-               
-               SizedBox(height: TSizes.spaceBtwSections,),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center, // Centering the dots
-                children: [
-                for(int i = 0;i < 4; i ++) 
-                 TCircularContainer(width: 20, height: 4,margin: EdgeInsets.only(right: 10),
-                 backgroundColor: Colors.green,
-                 child: const SizedBox(), // Forces the container to render its dimensions
-                 ),
-              ],
-              ),
-               ],
-               )
+              child: TPromoSlider()
             ),
           ],
         ),
       ),
     );
+  }
+}
+
+
+class TPromoSlider extends StatelessWidget {
+  const TPromoSlider({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        CarouselSlider(
+           options: CarouselOptions(
+          viewportFraction: 0.8,
+            ),
+          items: const [
+           TRoundedImage(imageUrl: TImages.promoBanner1,),
+           TRoundedImage(imageUrl: TImages.promoBanner12,),
+           TRoundedImage(imageUrl: TImages.promoBanner2,),
+           TRoundedImage(imageUrl: TImages.promoBanner3,),
+           ],
+        ),
+     
+     SizedBox(height: TSizes.spaceBtwSections,),
+    Row(
+      mainAxisAlignment: MainAxisAlignment.center, // Centering the dots
+      children: [
+      for(int i = 0;i < 4; i ++) 
+       TCircularContainer(width: 20, height: 4, margin: EdgeInsets.only(right: 10),backgroundColor: Colors.green,
+       child: const SizedBox(), // Forces the container to render its dimensions
+         ),
+        ],
+       ),
+      ],
+     );
   }
 }
 
