@@ -11,6 +11,7 @@ import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart'
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categories.dart';
+import 'package:e_commerce_app/features/shop/screens/home/widgets/promo_slider.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
@@ -73,40 +74,4 @@ class HomeScreen extends StatelessWidget {
   }
 }
 
-
-class TPromoSlider extends StatelessWidget {
-  const TPromoSlider({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        CarouselSlider(
-           options: CarouselOptions(
-          viewportFraction: 0.8,
-            ),
-          items: const [
-           TRoundedImage(imageUrl: TImages.promoBanner1,),
-           TRoundedImage(imageUrl: TImages.promoBanner12,),
-           TRoundedImage(imageUrl: TImages.promoBanner2,),
-           TRoundedImage(imageUrl: TImages.promoBanner3,),
-           ],
-        ),
-     
-     SizedBox(height: TSizes.spaceBtwSections,),
-    Row(
-      mainAxisAlignment: MainAxisAlignment.center, // Centering the dots
-      children: [
-      for(int i = 0;i < 4; i ++) 
-       TCircularContainer(width: 20, height: 4, margin: EdgeInsets.only(right: 10),backgroundColor: Colors.green,
-       child: const SizedBox(), // Forces the container to render its dimensions
-         ),
-        ],
-       ),
-      ],
-     );
-  }
-}
 
