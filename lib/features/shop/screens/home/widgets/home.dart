@@ -65,8 +65,17 @@ class HomeScreen extends StatelessWidget {
             //body
             Padding(
               padding: EdgeInsets.all(TSizes.defaultSpace),
-              child: TPromoSlider(banner: [TImages.promoBanner1, TImages.promoBanner12,TImages.promoBanner2,TImages.promoBanner3,],
-           )
+              child: Column(
+                children: [
+                  TPromoSlider(banner: [TImages.promoBanner1, TImages.promoBanner12,TImages.promoBanner2,TImages.promoBanner3,],
+                              ),
+                
+                //Popular product
+                TProductCardVertical(),
+                ],
+              ),
+            
+            
             ),
           ],
         ),
