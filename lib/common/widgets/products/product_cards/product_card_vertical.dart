@@ -33,7 +33,15 @@ class TProductCardVertical extends StatelessWidget {
           backgroundColor: dark ? TColors.dark : TColors.light,
           child: Stack(
             children: [
-              TRoundedImage(imageUrl: TImages.productShoe),
+              //Thumbnail Image
+              TRoundedImage(imageUrl: TImages.productShoe,applyImageRadius: true,),
+
+              //Sale tag
+              TRoundedContainer(
+                radius: TSizes.sm,
+                backgroundColor: TColors.secondary.withOpacity(0.8),
+                padding: const EdgeInsets.all(value),
+              )
             ],
           ),
           )
