@@ -20,6 +20,16 @@ class TProductCardVertical extends StatelessWidget {
         borderRadius: BorderRadius.circular(TSizes.productImageRadius),
         color: dark ? TColors.darkGrey : TColors.white,
       ),
+
+      child: Column(
+        children: [
+          ///Thumbnail,Wishlist button,discount tag
+          TRoundedContainer(
+          width: 180,
+          padding: const EdgeInsets.all(1),
+          ///Details
+        ],
+      ),
     );
   }
 }
