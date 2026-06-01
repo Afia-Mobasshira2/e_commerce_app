@@ -8,6 +8,7 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_
 import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
+import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_appbar.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home_categories.dart';
@@ -67,9 +68,9 @@ class HomeScreen extends StatelessWidget {
               padding: EdgeInsets.all(TSizes.defaultSpace),
               child: Column(
                 children: [
-                  TPromoSlider(banner: [TImages.promoBanner1, TImages.promoBanner12,TImages.promoBanner2,TImages.promoBanner3,],
-                              ),
-                
+                  TPromoSlider(banner: [TImages.promoBanner1, TImages.promoBanner12,TImages.promoBanner2,TImages.promoBanner3,],),
+                  const SizedBox(height: TSizes.spaceBtwItems,),
+                  
                 //Popular product
                 TProductCardVertical(),
                 ],
