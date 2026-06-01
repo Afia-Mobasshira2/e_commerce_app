@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/styles/shadows.dart';
+import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
@@ -25,8 +26,9 @@ class TProductCardVertical extends StatelessWidget {
         children: [
           ///Thumbnail,Wishlist button,discount tag
           TRoundedContainer(
-          width: 180,
-          padding: const EdgeInsets.all(1),
+          height: 180,
+          padding: const EdgeInsets.all(TSizes.sm),
+          backgroundColor: dark ? TColors.dark : TColors.light,)
           ///Details
         ],
       ),
