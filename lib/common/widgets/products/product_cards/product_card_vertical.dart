@@ -50,7 +50,10 @@ class TProductCardVertical extends StatelessWidget {
               ),
 
               //Favorite Icon Button
-              TCircularIcon(dark: dark)
+              const Positioned(
+                top: 0,//to push it right
+                right: 0,// to push it right
+                child: TCircularIcon( icon: Iconsax.heart5 ,color: Colors.red,))
             ],
           ),
           )

@@ -1,4 +1,6 @@
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/enums.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
@@ -11,7 +13,14 @@ class TCircularIcon extends StatelessWidget {
   //
   //Icons [size],[color],[onPressed]
   const TCircularIcon({
-    super.key,
+    super.key, 
+    this.width, 
+    this.height, 
+    this.size = TSizes.lg, 
+    required this.icon, 
+    this.color, 
+    this.backgroundColor, 
+    this.onPressed,
     
   });
 
@@ -19,7 +28,7 @@ class TCircularIcon extends StatelessWidget {
   final IconData icon;
   final Color? color;
   final Color? backgroundColor;
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   
 
   @override
