@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/styles/shadows.dart';
+import 'package:e_commerce_app/common/widgets/Icons/t_circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
@@ -61,22 +62,3 @@ class TProductCardVertical extends StatelessWidget {
   }
 }
 
-class TCircularIcon extends StatelessWidget {
-  const TCircularIcon({
-    super.key,
-    required this.dark,
-  });
-
-  final bool dark;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(100),
-      color: dark ? TColors.black.withOpacity(0.9) : TColors.white.withOpacity(0.9),
-      ),
-      child: IconButton(onPressed: (){}, icon: const Icon(Iconsax.heart5)),
-    );
-  }
-}
