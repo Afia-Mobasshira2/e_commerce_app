@@ -2,6 +2,7 @@ import 'package:e_commerce_app/common/styles/shadows.dart';
 import 'package:e_commerce_app/common/widgets/Icons/t_circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
+import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -57,18 +58,24 @@ class TProductCardVertical extends StatelessWidget {
             ],
           ),
           ),
+          const SizedBox(height: TSizes.spaceBtwItems / 2,),
+
 
           ///Details
           Padding(
             padding: const EdgeInsets.only(left: TSizes.sm),
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('Green Nik Air Shoes',
-                style: Theme.of(context).textTheme.labelLarge,
-                overflow: TextOverflow.ellipsis,
-                maxLines: 2,
-                textAlign: TextAlign.left,
-                ),
+                TProductTitleText(title: 'Navy Blue Nike Air Shoe',smallSize: true,),
+                const SizedBox(height: TSizes.spaceBtwItems / 2,),
+                Row(
+                  children: [
+                    Text('Nike',overflow: TextOverflow.ellipsis,maxLines: 1,style: Theme.of(context).textTheme.labelMedium),
+                const SizedBox(width: TSizes.xs),
+                  const Icon(Iconsax.verify5,color: TColors.primary,size: TSizes.iconXs,)
+                  ],
+                )
               ],
             ),
             )
