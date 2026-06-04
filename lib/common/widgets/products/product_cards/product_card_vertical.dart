@@ -56,9 +56,22 @@ class TProductCardVertical extends StatelessWidget {
                 child: TCircularIcon( icon: Iconsax.heart5 ,color: Colors.red,))
             ],
           ),
-          )
+          ),
 
           ///Details
+          Padding(
+            padding: const EdgeInsets.only(left: TSizes.sm),
+            child: Column(
+              children: [
+                Text('Green Nik Air Shoes',
+                style: Theme.of(context).textTheme.labelLarge,
+                overflow: TextOverflow.ellipsis,
+                maxLines: 2,
+                textAlign: TextAlign.left,
+                ),
+              ],
+            ),
+            )
         ],
       ),
     );
