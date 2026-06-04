@@ -2,6 +2,7 @@ import 'package:e_commerce_app/common/styles/shadows.dart';
 import 'package:e_commerce_app/common/widgets/Icons/t_circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
+import 'package:e_commerce_app/common/widgets/price_title/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
@@ -82,7 +83,7 @@ class TProductCardVertical extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ///Price
-                    TProductPriceText(),
+                    TProductPriceText(price: '35.5',),
 
                     //Add to Cart Button
                       Container(
@@ -108,21 +109,6 @@ class TProductCardVertical extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TProductPriceText extends StatelessWidget {
-  const TProductPriceText({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Text(
-      '\$35.5',
-      overflow: TextOverflow.ellipsis,
-      maxLines: 1,
-      style: Theme.of(context).textTheme.headlineMedium);
   }
 }
 
