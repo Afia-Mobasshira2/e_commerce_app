@@ -7,6 +7,7 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:e_commerce_app/common/widgets/image_text_widgets/vertical_image_text.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
+import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/common/widgets/products/product_cards/product_card_vertical.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
@@ -72,7 +73,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems,),
                   
                 //Popular product
-                TGridLayout()
+                TGridLayout(itemCount: 4, itemBuilder: (_ , index ) => const TProductCardVertical(),)
                 
                 ],
               ),
@@ -85,28 +86,4 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-class TGridLayout extends StatelessWidget {
-  const TGridLayout({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return GridView.builder(
-      itemCount: 4,
-      shrinkWrap: true,
-      padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 2,
-        mainAxisSpacing: TSizes.gridViewSpacing,
-        crossAxisSpacing: TSizes.gridViewSpacing,
-        mainAxisExtent: 288
-        ), 
-      itemBuilder: (_, index) => const TProductCardVertical(),
-      );
-  }
-}
-
 
