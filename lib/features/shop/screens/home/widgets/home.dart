@@ -51,6 +51,8 @@ class HomeScreen extends StatelessWidget {
                   padding: EdgeInsets.only(left: TSizes.defaultSpace),
                   child: Column(
                     children: [
+                      
+                      //Heading
                       TSectionHeading(title: 'Popular Categories',showActionButton: false,textColor: Colors.white,),
                        const SizedBox(height: TSizes.spaceBtwItems,),
 
