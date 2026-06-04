@@ -72,19 +72,7 @@ class HomeScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwItems,),
                   
                 //Popular product
-                GridView.builder(
-                  itemCount: 4,
-                  shrinkWrap: true,
-                  padding: EdgeInsets.zero,
-                  physics: const NeverScrollableScrollPhysics(),
-                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2,
-                    mainAxisSpacing: TSizes.gridViewSpacing,
-                    crossAxisSpacing: TSizes.gridViewSpacing,
-                    mainAxisExtent: 288
-                    ), 
-                  itemBuilder: (_, index) => const TProductCardVertical(),
-                  )
+                TGridLayout()
                 
                 ],
               ),
@@ -95,6 +83,29 @@ class HomeScreen extends StatelessWidget {
         ),
       ),
     );
+  }
+}
+
+class TGridLayout extends StatelessWidget {
+  const TGridLayout({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return GridView.builder(
+      itemCount: 4,
+      shrinkWrap: true,
+      padding: EdgeInsets.zero,
+      physics: const NeverScrollableScrollPhysics(),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+        crossAxisCount: 2,
+        mainAxisSpacing: TSizes.gridViewSpacing,
+        crossAxisSpacing: TSizes.gridViewSpacing,
+        mainAxisExtent: 288
+        ), 
+      itemBuilder: (_, index) => const TProductCardVertical(),
+      );
   }
 }
 
