@@ -1,5 +1,7 @@
+import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
 class StoreScreen extends StatelessWidget {
@@ -8,11 +10,23 @@ class StoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
+      appBar: TAppBar(
         title: Text('Store',style: Theme.of(context).textTheme.headlineMedium,),
         actions: [
         TCartCounterIcon(onPressed: (){}, iconColor: TColors.primary)],
       ),
+      body: NestedScrollView(headerSliverBuilder: (_, innerBoxIsScrololed){
+        return[
+          SliverAppBar(
+            automaticallyImplyLeading: false,
+            pinned: true,
+            floating: true,
+            backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white,
+            expandedHeight: 440,
+          ),
+        ];
+      }, 
+      body: Container()),
     );
   }
 }
