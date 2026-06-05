@@ -11,7 +11,8 @@ import 'package:get/get_core/src/get_main.dart';
 
 class TPromoSlider extends StatelessWidget {
   const TPromoSlider({
-    super.key, required this.banner,
+    super.key, 
+    required this.banner,
   });
 
   final List<String> banner;
