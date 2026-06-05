@@ -78,12 +78,22 @@ class TProductCardVertical extends StatelessWidget {
                   const SizedBox(width: TSizes.xs),
                     const Icon(Iconsax.verify5,color: TColors.primary,size: TSizes.iconXs,)
                     ],
-                  ),
+                   ),
+
+                  ],
+               ),
+              ),
+              
+                  Spacer(),
+
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       ///Price
-                    TProductPriceText(price: '35.5',),
+                      const Padding(
+                      padding:  EdgeInsets.only(left: TSizes.sm),
+                      child: TProductPriceText(price: '35.0',),
+                    ),
 
                     //Add to Cart Button
                       Container(
@@ -101,10 +111,7 @@ class TProductCardVertical extends StatelessWidget {
                           ),
                       )
                     ]
-                  )
-                ],
-              ),
-              )
+                  ),
           ],
         ),
       ),
