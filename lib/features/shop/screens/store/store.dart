@@ -4,6 +4,7 @@ import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -50,14 +51,7 @@ class StoreScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         //Icon
-                        Container(
-                          width: 56,
-                          height: 56,
-                          padding: const EdgeInsets.all(TSizes.sm),
-                          decoration: BoxDecoration(
-                          
-                          ),
-                          ),
+                        TCircularImage(),
                         
                       ],
                     ),
@@ -70,5 +64,26 @@ class StoreScreen extends StatelessWidget {
       }, 
       body: Container()),
     );
+  }
+}
+
+class TCircularImage extends StatelessWidget {
+  const TCircularImage({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      width: 56,
+      height: 56,
+      padding: const EdgeInsets.all(TSizes.sm),
+      decoration: BoxDecoration(
+      color: THelperFunctions.isDarkMode(context) ? TColors.black : TColors.white,
+      borderRadius: BorderRadius.circular(100),
+      ),
+      child: Image(
+        image: const AssetImage(TImages.clothIcon)),
+      );
   }
 }
