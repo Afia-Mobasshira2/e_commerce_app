@@ -52,8 +52,20 @@ class StoreScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         //Icon
-                        TCircularImage(image: 'TIm',),
+                        TCircularImage(
+                          isNetworkImage: false,
+                          image: TImages.clothIcon,
+                          backgroundColor: Colors.transparent,
+                          overlayColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.black,
+                          ),
+                        const SizedBox(height: TSizes.spaceBtwItems / 2,),
                         
+                        //Text
+                        Column(
+                          children: [
+                            
+                          ],
+                        )
                       ],
                     ),
                   )
