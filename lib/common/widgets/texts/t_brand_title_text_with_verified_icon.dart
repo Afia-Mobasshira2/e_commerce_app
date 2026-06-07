@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/widgets/texts/t_brand_title_text.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -12,14 +13,14 @@ class TBrandTitleTextWithVerifiedIcon extends StatelessWidget {
     this.textColor, 
     this.iconColor = TColors.primary, 
     this.textAlign = TextAlign.center, 
-    this.brandTextSizes = TextSizes.small
+    this.brandTextSize = TextSizes.small
     });
 
   final String title;
   final int maxLines;
   final Color? textColor,iconColor;
   final TextAlign? textAlign;
-  final TextSizes brandTextSizes;
+  final TextSizes brandTextSize;
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +33,7 @@ class TBrandTitleTextWithVerifiedIcon extends StatelessWidget {
                 color : textColor,
                 maxLines: maxLines,
                 textAlign : textAlign,
-                brandTextSizes : brandTextSizes,
+                brandTextSize : brandTextSize,
                 ),
                 ),
             const SizedBox(width: TSizes.xs),
