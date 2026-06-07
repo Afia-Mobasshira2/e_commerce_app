@@ -24,7 +24,8 @@ class StoreScreen extends StatelessWidget {
         actions: [
         TCartCounterIcon(onPressed: (){}, iconColor: TColors.primary)],
       ),
-      body: NestedScrollView(headerSliverBuilder: (_, innerBoxIsScrololed){
+      body: NestedScrollView(
+        headerSliverBuilder: (_, innerBoxIsScrololed){
         return[
           SliverAppBar(
             automaticallyImplyLeading: false,
@@ -45,10 +46,10 @@ class StoreScreen extends StatelessWidget {
                   const SizedBox(height: TSizes.spaceBtwSections,),
 
                   //Featured Brands
-                  TSectionHeading(title: 'Featured Brands',onPressed: (){},),
+                  TSectionHeading(title: 'Featured Brands',onPressed: (){}, ),
                   const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
 
-                 TGridLayout(itemCount: 4, itemBuilder: (_, index){
+                 TGridLayout(itemCount: 4,mainAxisExtent: 80, itemBuilder: (_, index){
                   return GestureDetector(
                     onTap:() {},
                     child: TRoundedContainer(
@@ -58,24 +59,29 @@ class StoreScreen extends StatelessWidget {
                       child: Row(
                         children: [
                           //Icon
-                          TCircularImage(
-                            isNetworkImage: false,
-                            image: TImages.clothIcon,
-                            backgroundColor: Colors.transparent,
-                            overlayColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.black,
-                            ),
+                          Flexible(
+                            child: TCircularImage(
+                              isNetworkImage: false,
+                              image: TImages.clothIcon,
+                              backgroundColor: Colors.transparent,
+                              overlayColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.black,
+                              ),
+                          ),
                           const SizedBox(height: TSizes.spaceBtwItems / 2,),
                           
                           //Text
-                          Column(
-                            children: [
-                              TBrandTitleTextWithVerifiedIcon(title: 'Nike',brandTextSize: TextSizes.large,),
-                              Text(
-                                "256 Products",
-                                overflow: TextOverflow.ellipsis,
-                                style: Theme.of(context).textTheme.labelMedium,
-                              )
-                            ],
+                          Expanded(
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                TBrandTitleTextWithVerifiedIcon(title: 'Nike',brandTextSize: TextSizes.large,),
+                                Text(
+                                  "256 Products",
+                                  overflow: TextOverflow.ellipsis,
+                                  style: Theme.of(context).textTheme.labelMedium,
+                                )
+                              ],
+                            ),
                           )
                         ],
                       ),
