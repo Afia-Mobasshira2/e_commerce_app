@@ -2,6 +2,7 @@ import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
+import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
@@ -47,7 +48,8 @@ class StoreScreen extends StatelessWidget {
                   TSectionHeading(title: 'Featured Brands',onPressed: (){},),
                   const SizedBox(height: TSizes.spaceBtwItems / 1.5,),
 
-                  GestureDetector(
+                 TGridLayout(itemCount: 4, itemBuilder: (_, index){
+                  return GestureDetector(
                     onTap:() {},
                     child: TRoundedContainer(
                       padding: const EdgeInsets.all(TSizes.sm),
@@ -78,7 +80,9 @@ class StoreScreen extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )
+                  
+                  );
+                 })
                 ],
               ),
               ),
