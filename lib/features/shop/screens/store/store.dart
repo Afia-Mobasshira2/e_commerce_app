@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
+import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
@@ -51,7 +52,7 @@ class StoreScreen extends StatelessWidget {
                     child: Row(
                       children: [
                         //Icon
-                        TCircularImage(),
+                        TCircularImage(image: 'TIm',),
                         
                       ],
                     ),
