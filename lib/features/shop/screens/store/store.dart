@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app/common/widgets/appbar/tabbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
@@ -64,10 +65,7 @@ class StoreScreen extends StatelessWidget {
                 ),
 
                 //Tab
-                bottom: TabBar(
-                  isScrollable: true,
-                  indicatorColor: TColors.primary,
-                  labelColor: THelperFunctions.isDarkMode(context) ? TColors.white : TColors.primary,
+                bottom:const TTabBar(
                   tabs: [
                     Tab(child: Text("Sports"),),
                     Tab(child: Text("Furnitures"),),

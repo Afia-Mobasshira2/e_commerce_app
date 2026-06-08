@@ -3,8 +3,10 @@ import 'package:e_commerce_app/utils/device/device_utility.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-class TTabbar extends StatelessWidget implements PreferredSizeWidget{
-  const TTabbar({super.key, required this.tabs});
+class TTabBar extends StatelessWidget implements PreferredSizeWidget{
+  /// If you want to add the background color to tabs you have to wrap them in Material widget.
+  /// To do that we need [PreferredSize] Widget and that's why created custom class. [PreferredSizeWidget]
+  const TTabBar({super.key, required this.tabs});
 
   final List<Widget> tabs;
 
