@@ -76,8 +76,36 @@ class StoreScreen extends StatelessWidget {
             ),
           ];
         }, 
-        body: Container()),
+        // -- Body -- Tutorial [Section # 3, Video # 8]
+  body: TabBarView(
+    children: [
+      Padding(
+        padding: const EdgeInsets.all(TSizes.defaultSpace),
+        child: Column(
+          children: [
+            /// -- Brands
+            TRoundedContainer(
+              showBorder: true,
+              borderColor: TColors.darkGrey,
+              backgroundColor: Colors.transparent,
+              margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+              child: Column(
+                children: [
+                  /// Brand with Products Count
+                  const TBrandCard(showBorder: true),
+                  /// Brand Top 3 Product Images),
+                  
+                ],
+              )
+            )
+            //Products
+          ]
+          )
+      )
+    ]
       ),
+    )
+      )
     );
   }
 }

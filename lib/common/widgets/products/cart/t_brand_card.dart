@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 
 class TBrandCard extends StatelessWidget {
   const TBrandCard({
-    super.key,
+    super.key,required this.showBorder, this.onTap,
   });
 
   final bool showBorder;
@@ -28,6 +28,7 @@ class TBrandCard extends StatelessWidget {
         showBorder: showBorder,
         backgroundColor: Colors.transparent,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             //Icon
             Flexible(
@@ -44,6 +45,8 @@ class TBrandCard extends StatelessWidget {
             Expanded(
               child: Column(
                 mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+
                 children: [
                   TBrandTitleTextWithVerifiedIcon(title: 'Nike',brandTextSize: TextSizes.large,),
                   Text(
