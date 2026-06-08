@@ -13,13 +13,19 @@ class TBrandCard extends StatelessWidget {
     super.key,
   });
 
+  final bool showBorder;
+  final void Function()? onTap;
+
   @override
   Widget build(BuildContext context) {
+    final dark = THelperFunctions.isDarkMode(context);
+
     return GestureDetector(
-      onTap:() {},
+      onTap: onTap,
+      //Container Design
       child: TRoundedContainer(
         padding: const EdgeInsets.all(TSizes.sm),
-        showBorder: true,
+        showBorder: showBorder,
         backgroundColor: Colors.transparent,
         child: Row(
           children: [
