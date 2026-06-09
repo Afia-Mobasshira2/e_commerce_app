@@ -1,11 +1,11 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/appbar/tabbar.dart';
+import 'package:e_commerce_app/common/widgets/brands/t_brand_card.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/search_container.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
 import 'package:e_commerce_app/common/widgets/layouts/grid_layout.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_menu_icon.dart';
-import 'package:e_commerce_app/common/widgets/products/cart/t_brand_card.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
@@ -84,7 +84,7 @@ class StoreScreen extends StatelessWidget {
         child: Column(
           children: [
             /// -- Brands
-            TBrandShowcase()
+            TBrandShowcase(images: [],)
             //Products
           ]
           )
@@ -117,39 +117,10 @@ class TBrandShowcase extends StatelessWidget {
           /// Brand with Products Count
           const TBrandCard(showBorder: false),
           /// Brand Top 3 Product Images),
-          Row(
-            children: [
-              Expanded(
-                child: TRoundedContainer(
-                  height: 100,
-                  backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
-                  margin: const EdgeInsets.only(right: TSizes.sm),
-                  padding: const EdgeInsets.all(TSizes.md),
-                  child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
-                ),
-              ),
-              Expanded(
-                child: TRoundedContainer(
-                  height: 100,
-                  backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
-                  margin: const EdgeInsets.only(right: TSizes.sm),
-                  padding: const EdgeInsets.all(TSizes.md),
-                  child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
-                ),
-              ),
-              Expanded(
-                child: TRoundedContainer(
-                  height: 100,
-                  backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
-                  margin: const EdgeInsets.only(right: TSizes.sm),
-                  padding: const EdgeInsets.all(TSizes.md),
-                  child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
-                ),
-              ),
+          Row(children: 
+              images.map((image) => brandTopProductImageWidget(image, context)).toList()),
             ],
           )
-        ],
-      )
     );
   }
 
