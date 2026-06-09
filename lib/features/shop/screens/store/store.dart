@@ -102,7 +102,7 @@ class StoreScreen extends StatelessWidget {
                         margin: const EdgeInsets.only(right: TSizes.sm),
                         padding: const EdgeInsets.all(TSizes.md),
                         child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.sportIcon)),
-                      )
+                      ),
                     ],
                   )
                 ],
