@@ -84,30 +84,7 @@ class StoreScreen extends StatelessWidget {
         child: Column(
           children: [
             /// -- Brands
-            TRoundedContainer(
-              showBorder: true,
-              borderColor: TColors.darkGrey,
-              backgroundColor: Colors.transparent,
-              margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
-              child: Column(
-                children: [
-                  /// Brand with Products Count
-                  const TBrandCard(showBorder: false),
-                  /// Brand Top 3 Product Images),
-                  Row(
-                    children: [
-                      TRoundedContainer(
-                        height: 100,
-                        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
-                        margin: const EdgeInsets.only(right: TSizes.sm),
-                        padding: const EdgeInsets.all(TSizes.md),
-                        child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
-                      ),
-                    ],
-                  )
-                ],
-              )
-            )
+            TBrandShowcase()
             //Products
           ]
           )
@@ -117,6 +94,74 @@ class StoreScreen extends StatelessWidget {
     )
       )
     );
+  }
+}
+
+class TBrandShowcase extends StatelessWidget {
+  const TBrandShowcase({
+    super.key, required this.images,
+  });
+
+  final List<String> images;
+  @override
+  Widget build(BuildContext context) {
+    return TRoundedContainer(
+      showBorder: true,
+      borderColor: TColors.darkGrey,
+      backgroundColor: Colors.transparent,
+      padding: const EdgeInsets.all(TSizes.md),
+    
+      margin: const EdgeInsets.only(bottom: TSizes.spaceBtwItems),
+      child: Column(
+        children: [
+          /// Brand with Products Count
+          const TBrandCard(showBorder: false),
+          /// Brand Top 3 Product Images),
+          Row(
+            children: [
+              Expanded(
+                child: TRoundedContainer(
+                  height: 100,
+                  backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                  margin: const EdgeInsets.only(right: TSizes.sm),
+                  padding: const EdgeInsets.all(TSizes.md),
+                  child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
+                ),
+              ),
+              Expanded(
+                child: TRoundedContainer(
+                  height: 100,
+                  backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                  margin: const EdgeInsets.only(right: TSizes.sm),
+                  padding: const EdgeInsets.all(TSizes.md),
+                  child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
+                ),
+              ),
+              Expanded(
+                child: TRoundedContainer(
+                  height: 100,
+                  backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                  margin: const EdgeInsets.only(right: TSizes.sm),
+                  padding: const EdgeInsets.all(TSizes.md),
+                  child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
+                ),
+              ),
+            ],
+          )
+        ],
+      )
+    );
+  }
+
+  Widget brandTopProductImageWidget(String image,context){
+    return Expanded(
+      child: TRoundedContainer(
+                height: 100,
+                backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                margin: const EdgeInsets.only(right: TSizes.sm),
+                padding: const EdgeInsets.all(TSizes.md),
+                child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
+      ));
   }
 }
 
