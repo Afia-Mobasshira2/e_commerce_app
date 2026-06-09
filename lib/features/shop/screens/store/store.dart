@@ -85,7 +85,7 @@ class StoreScreen extends StatelessWidget {
         child: Column(
           children: [
             /// -- Brands
-            TBrandShowcase(images: [TImages.storeSportsJacket,TImages.],)
+            TBrandShowcase(images: [TImages.storeSportsJacket,TImages.storeSportsShoe1,TImages.storeSportsShoe2],)
             //Products
           ]
           )

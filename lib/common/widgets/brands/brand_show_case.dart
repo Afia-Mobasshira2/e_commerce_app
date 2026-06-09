@@ -12,6 +12,7 @@ class TBrandShowcase extends StatelessWidget {
   });
 
   final List<String> images;
+
   @override
   Widget build(BuildContext context) {
     return TRoundedContainer(
@@ -25,6 +26,7 @@ class TBrandShowcase extends StatelessWidget {
         children: [
           /// Brand with Products Count
           const TBrandCard(showBorder: false),
+          
           /// Brand Top 3 Product Images),
           Row(children: 
               images.map((image) => brandTopProductImageWidget(image, context)).toList()),
@@ -40,7 +42,7 @@ class TBrandShowcase extends StatelessWidget {
                 backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
                 margin: const EdgeInsets.only(right: TSizes.sm),
                 padding: const EdgeInsets.all(TSizes.md),
-                child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
+                child:  Image(fit: BoxFit.contain,image: AssetImage(image)),
       ));
   }
 }

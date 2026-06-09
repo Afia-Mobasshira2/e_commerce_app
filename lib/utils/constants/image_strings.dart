@@ -45,6 +45,8 @@ class TImages {
   
   //Store Sports
   static const String storeSportsJacket = "assets/images/products/store_sports.jpg";
+  static const String storeSportsShoe1 = "assets/images/products/store_sports.jpg";
+  static const String storeSportsShoe2 = "assets/images/products/store_sports.jpg";
 
 
 }
