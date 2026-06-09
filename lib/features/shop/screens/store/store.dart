@@ -58,7 +58,7 @@ class StoreScreen extends StatelessWidget {
                     itemCount: 4,
                     mainAxisExtent: 80, 
                     itemBuilder: (_, index){
-                    return TBrandCard();
+                    return TBrandCard(showBorder: true,);
                    })
                   ],
                 ),
@@ -92,9 +92,19 @@ class StoreScreen extends StatelessWidget {
               child: Column(
                 children: [
                   /// Brand with Products Count
-                  const TBrandCard(showBorder: true),
+                  const TBrandCard(showBorder: false),
                   /// Brand Top 3 Product Images),
-                  
+                  Row(
+                    children: [
+                      TRoundedContainer(
+                        height: 100,
+                        backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
+                        margin: const EdgeInsets.only(right: TSizes.sm),
+                        padding: const EdgeInsets.all(TSizes.md),
+                        child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.sportIcon)),
+                      )
+                    ],
+                  )
                 ],
               )
             )
