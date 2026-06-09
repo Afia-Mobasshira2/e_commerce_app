@@ -101,7 +101,7 @@ class StoreScreen extends StatelessWidget {
                         backgroundColor: THelperFunctions.isDarkMode(context) ? TColors.darkerGrey : TColors.light,
                         margin: const EdgeInsets.only(right: TSizes.sm),
                         padding: const EdgeInsets.all(TSizes.md),
-                        child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.sportIcon)),
+                        child: const Image(fit: BoxFit.contain,image: AssetImage(TImages.storeSportsJacket)),
                       ),
                     ],
                   )
