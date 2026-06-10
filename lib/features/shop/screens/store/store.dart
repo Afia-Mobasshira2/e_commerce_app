@@ -75,6 +75,7 @@ class StoreScreen extends StatelessWidget {
                     Tab(child: Text("Cloths"),),
                     Tab(child: Text("Cosmetics"),),
                   ]),
+                  
             ),
           ];
         }, 
