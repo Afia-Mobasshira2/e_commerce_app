@@ -80,16 +80,7 @@ class StoreScreen extends StatelessWidget {
         // -- Body -- Tutorial [Section # 3, Video # 8]
   body: TabBarView(
     children: [
-      Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(
-          children: [
-            /// -- Brands
-            TBrandShowcase(images: [TImages.storeSportsJacket,TImages.storeSportsShoe1,TImages.storeSportsShoe2],)
-            //Products
-          ]
-          )
-      )
+      
     ]
       ),
     )
