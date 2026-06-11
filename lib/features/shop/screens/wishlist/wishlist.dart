@@ -1,4 +1,10 @@
+import 'package:e_commerce_app/common/widgets/Icons/t_circular_icon.dart';
+import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app/features/shop/screens/home/widgets/home.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/get_navigation.dart';
+import 'package:iconsax/iconsax.dart';
 
 class FavouriteScreen extends StatelessWidget {
   const FavouriteScreen
@@ -6,6 +12,13 @@ class FavouriteScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: TAppBar(
+        title: Text('Wishlist',style: Theme.of(context).textTheme.headlineMedium,),
+        actions: [
+          TCircularIcon(icon: Iconsax.add,onPressed: () => Get.to(const HomeScreen()),),
+        ],
+      ),
+    );
   }
 }
