@@ -11,20 +11,29 @@ class TCategoryTab extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.all(TSizes.defaultSpace),
-        child: Column(
-          children: [
-            /// -- Brands
-            TBrandShowcase(images: [TImages.storeSportsJacket,TImages.storeSportsShoe1,TImages.storeSportsShoe2],),
-            
-            //Products
-            TSectionHeading(title: 'You might like', onPressed: () {},),
-            const SizedBox(height: TSizes.spaceBtwItems,),
+    return ListView(
+      shrinkWrap: true,
+      physics:NeverScrollableScrollPhysics() ,
+      children: [ 
+        Padding(
+          padding: const EdgeInsets.all(TSizes.defaultSpace),
+          child: Column(
+            children: [
+              /// -- Brands
+              TBrandShowcase(images: [TImages.storeSportsJacket,TImages.storeSportsShoe1,TImages.storeSportsShoe2],),
+              TBrandShowcase(images: [TImages.storeSportsJacket,TImages.storeSportsShoe1,TImages.storeSportsShoe2],),
+              
+              //Products
+              TSectionHeading(title: 'You might like', onPressed: () {},),
+              const SizedBox(height: TSizes.spaceBtwItems,),
+      
+              TGridLayout(itemCount: 4, itemBuilder: (_, index) => const TProductCardVertical()),
+              const SizedBox(height: TSizes.spaceBtwSections,),
 
-            TGridLayout(itemCount: 4, itemBuilder: (_, index) => TProductCardVertical())
-          ]
-          )
+            ]
+            )
+      ),
+      ]
     );
   }
 }
