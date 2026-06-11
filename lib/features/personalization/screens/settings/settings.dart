@@ -1,3 +1,7 @@
+import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
+import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 
 class SettingsScreen extends StatelessWidget {
@@ -5,6 +9,22 @@ class SettingsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ///Header
+            TPrimaryHeaderContainer(
+              child: Column(
+                children: [
+                  TAppBar(title: Text('Account',style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white),),),
+                  const SizedBox(height: TSizes.spaceBtwSections,)
+                ],
+              ))
+            ///Body
+          ],
+        ),
+      ),
+    );
   }
 }
