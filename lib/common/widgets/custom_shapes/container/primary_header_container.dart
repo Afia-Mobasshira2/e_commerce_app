@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class TPrimaryHeaderContainer extends StatelessWidget {
   const TPrimaryHeaderContainer({
-    super.key, required this.child,
+    super.key, required this.child, required height,
   });
 
   final Widget child;
@@ -25,7 +25,6 @@ class TPrimaryHeaderContainer extends StatelessWidget {
         Positioned(top: -150,right: -250,child: TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1),)),
         Positioned(top: 100, right: -300,child: TCircularContainer(backgroundColor: TColors.textWhite.withOpacity(0.1),),),
          child ,    
-        
                   ],
                 ),
               ),

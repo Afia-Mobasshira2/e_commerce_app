@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/features/personalization/screens/settings/settings.dart';
 import 'package:e_commerce_app/features/shop/screens/home/widgets/home.dart';
 import 'package:e_commerce_app/features/shop/screens/store/store.dart';
 import 'package:e_commerce_app/features/shop/screens/wishlist/wishlist.dart';
@@ -42,5 +43,5 @@ class NavigationManu extends StatelessWidget {
 class NavigationController extends GetxController {
   final Rx<int> selectedIndex = 0.obs; ///obs being observed
 
-  final screens = [const HomeScreen(),const StoreScreen(),const FavouriteScreen(),Container(color: Colors.orange.shade100,)];
+  final screens = [const HomeScreen(),const StoreScreen(),const FavouriteScreen(),const SettingsScreen()];
 }
