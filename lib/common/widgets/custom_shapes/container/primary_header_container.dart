@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 class TPrimaryHeaderContainer extends StatelessWidget {
   const TPrimaryHeaderContainer({
-    super.key, required this.child, required height,
+    super.key, required this.child,
   });
 
   final Widget child;

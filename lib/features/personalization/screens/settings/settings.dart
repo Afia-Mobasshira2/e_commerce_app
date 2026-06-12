@@ -14,13 +14,16 @@ class SettingsScreen extends StatelessWidget {
         child: Column(
           children: [
             ///Header
-            TPrimaryHeaderContainer(
-              child: Column(
-                children: [
-                  TAppBar(title: Text('Account',style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white),),),
-                  const SizedBox(height: TSizes.spaceBtwSections,)
-                ],
-              ))
+            SizedBox(
+              height: 130 ,
+              child: TPrimaryHeaderContainer(
+                child: Column(
+                  children: [
+                    TAppBar(title: Text('Account',style: Theme.of(context).textTheme.headlineMedium!.apply(color: TColors.white),),),
+                    const SizedBox(height: TSizes.spaceBtwSections,)
+                  ],
+                )),
+            )
             ///Body
           ],
         ),
