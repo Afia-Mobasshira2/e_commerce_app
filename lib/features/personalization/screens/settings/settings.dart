@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/primary_header_container.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
+import 'package:e_commerce_app/common/widgets/list_tiles/user_profile_tile.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -28,7 +29,10 @@ class SettingsScreen extends StatelessWidget {
                     TUserProfileTile(),
                     const SizedBox(height: TSizes.spaceBtwSections,)
                   ],
-                )),
+                )
+                ),
+                //body
+                
             )
             ///Body
           ],
@@ -38,18 +42,3 @@ class SettingsScreen extends StatelessWidget {
   }
 }
 
-class TUserProfileTile extends StatelessWidget {
-  const TUserProfileTile({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ListTile(
-      leading: const TCircularImage(image: TImages.user,width: 50,height: 50,padding: 0,),
-      title: Text('Afia Mobasshira',style: Theme.of(context).textTheme.headlineSmall!.apply(color: TColors.white),),
-      subtitle: Text('afiamobasshira2@gmail.com',style: Theme.of(context).textTheme.bodyMedium!.apply(color: TColors.white),),
-    trailing: IconButton(onPressed: () {}, icon:const Icon(Iconsax.edit,color: TColors.white ,)),
-    );
-  }
-}
