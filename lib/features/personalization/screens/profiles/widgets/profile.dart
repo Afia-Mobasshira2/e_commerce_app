@@ -1,6 +1,7 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/t_circular_image.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
+import 'package:e_commerce_app/features/personalization/screens/profiles/widgets/profile_menu.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -37,17 +38,42 @@ class ProfileScreen extends StatelessWidget {
         const TSectionHeading(title: 'Profile Information', showActionButton: false),
         const SizedBox(height: TSizes.spaceBtwItems),
 
-        Row(
-          children: [
-            Expanded(child: Text('Name', style: Theme.of(context).textTheme.bodySmall, overflow: TextOverflow.ellipsis)),
-            Expanded(child: Text('Coding with T', style: Theme.of(context).textTheme.bodyMedium, overflow: TextOverflow.ellipsis)),
-            const Expanded(child: Icon(Iconsax.arrow_right_34, size: 18)),
-          ],
-        ), // Row
-      ],
-    ), // Column
+
+        /// Details
+        const SizedBox(height: TSizes.spaceBtwItems / 2),
+        const Divider(),
+        const SizedBox(height: TSizes.spaceBtwItems),
+
+        /// Heading Profile Info
+        const TSectionHeading(title: 'Profile Information', showActionButton: false),
+        const SizedBox(height: TSizes.spaceBtwItems),
+
+        TProfileMenu(title: 'Name', value: 'Coding with T', onPressed: () {}),
+        TProfileMenu(title: 'Username', value: 'coding_with_t', onPressed: () {}),
+
+        const SizedBox(height: TSizes.spaceBtwItems),
+        const Divider(),
+        const SizedBox(height: TSizes.spaceBtwItems),
+
+        /// Heading Personal Info
+        const TSectionHeading(title: 'Personal Information', showActionButton: false),
+        const SizedBox(height: TSizes.spaceBtwItems),
+
+        TProfileMenu(title: 'User ID', value: '45689', onPressed: () {}),
+        TProfileMenu(title: 'E-mail', value: 'coding_with_t', onPressed: () {}),
+        TProfileMenu(title: 'Phone Number', value: '+92-317-8059528', onPressed: () {}),
+        TProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
+        TProfileMenu(title: 'Date of Birth', value: '10 Oct, 1994', onPressed: () {}),
+
+        Center(
+          child: TextButton(onPressed: (){}, 
+          child: const Text('Close Account',style: TextStyle(color: Colors.red),)),
+        )
+  ],
+), // Column// Column
   ), // Padding
 ), // SingleChildScrollView
     );
   }
 }
+
