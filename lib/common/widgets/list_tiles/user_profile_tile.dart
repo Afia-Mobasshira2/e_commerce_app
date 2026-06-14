@@ -6,7 +6,7 @@ import 'package:iconsax/iconsax.dart';
 
 class TUserProfileTile extends StatelessWidget {
   const TUserProfileTile({
-    super.key,
+    super.key, required Future? Function() onPressed,
   });
 
   @override
