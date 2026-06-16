@@ -12,7 +12,7 @@ class TPrimaryHeaderContainer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TCustomCurveEdges( 
+    return TCurvedEdgesWidgets( 
       child: SizedBox(
         height: 400,
         child: Container(
