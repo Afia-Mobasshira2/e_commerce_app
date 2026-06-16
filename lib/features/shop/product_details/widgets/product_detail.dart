@@ -1,11 +1,12 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
+import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 
-class ProductDetail extends StatelessWidget {
-  const ProductDetail({super.key});
+class ProductDetailScreen extends StatelessWidget {
+  const ProductDetailScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +22,13 @@ class ProductDetail extends StatelessWidget {
                 child: Stack(
                   children: [
                       ///Main large image
-                      Image(image: AssetImage(TImages.productShoe))
+                     SizedBox(
+                      height: 400,child: Padding(
+                        padding: EdgeInsets.all(TSizes.productImageRadius),
+                        child: Center(child: Image(image: AssetImage(TImages.productShoe)),
+                                             ),
+                      ),
+                     ),
                   ],
                 ),
               ))
