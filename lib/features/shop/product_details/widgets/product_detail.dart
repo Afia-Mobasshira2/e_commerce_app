@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
+import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -18,22 +19,25 @@ class ProductDetailScreen extends StatelessWidget {
             ///-----Product image Silder
             TCurvedEdgesWidgets(
               child: Container(
-                color: dark ? TColors.darkGrey : TColors.light,
+                color: dark ? TColors.darkerGrey : TColors.light,
                 child: Stack(
                   children: [
                       ///Main large image
                      SizedBox(
                       height: 400,child: Padding(
-                        padding: EdgeInsets.all(TSizes.productImageRadius),
+                        padding: EdgeInsets.all(TSizes.productImageRadius *2 ),
                         child: Center(child: Image(image: AssetImage(TImages.productShoe)),
                                              ),
                       ),
                      ),
+                     ///---Product Details
+                     TRoundedImage(
+                      width: 80,
+                      imageUrl: TImages.productShoeDetails3)
                   ],
                 ),
-              ))
-              ///---Product Details
-            ///Main large image
+              )),
+            
           ],
         ),
       ),
