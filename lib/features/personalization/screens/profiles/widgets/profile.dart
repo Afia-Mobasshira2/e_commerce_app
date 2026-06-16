@@ -48,27 +48,29 @@ class ProfileScreen extends StatelessWidget {
         const TSectionHeading(title: 'Profile Information', showActionButton: false),
         const SizedBox(height: TSizes.spaceBtwItems),
 
-        TProfileMenu(title: 'Name', value: 'Coding with T', onPressed: () {}),
-        TProfileMenu(title: 'Username', value: 'coding_with_t', onPressed: () {}),
+        TProfileMenu(title: 'Name', value: 'Afia Mobasshira', onPressed: () {}),
+        TProfileMenu(title: 'Username', value: 'Afia', onPressed: () {}),
 
         const SizedBox(height: TSizes.spaceBtwItems),
         const Divider(),
         const SizedBox(height: TSizes.spaceBtwItems),
 
         /// Heading Personal Info
-        const TSectionHeading(title: 'Personal Information', showActionButton: false),
+        const TSectionHeading(title: 'Personal Information', showActionButton: false,),
         const SizedBox(height: TSizes.spaceBtwItems),
 
-        TProfileMenu(title: 'User ID', value: '45689', onPressed: () {}),
-        TProfileMenu(title: 'E-mail', value: 'coding_with_t', onPressed: () {}),
-        TProfileMenu(title: 'Phone Number', value: '+92-317-8059528', onPressed: () {}),
-        TProfileMenu(title: 'Gender', value: 'Male', onPressed: () {}),
-        TProfileMenu(title: 'Date of Birth', value: '10 Oct, 1994', onPressed: () {}),
+        TProfileMenu(title: 'User ID', value: '0343', onPressed: () {}),
+        TProfileMenu(title: 'E-mail', value: 'afiamobasshira2@gmail.com', onPressed: () {}),
+        TProfileMenu(title: 'Phone Number', value: '+61-175-89899', onPressed: () {}),
+        TProfileMenu(title: 'Gender', value: 'Female', onPressed: () {}),
+        TProfileMenu(title: 'Date of Birth', value: '30 Jan, 2003', onPressed: () {}),
+        const SizedBox(height: TSizes.spaceBtwItems),
+
 
         Center(
           child: TextButton(onPressed: (){}, 
           child: const Text('Close Account',style: TextStyle(color: Colors.red),)),
-        )
+        ),
   ],
 ), // Column// Column
   ), // Padding
