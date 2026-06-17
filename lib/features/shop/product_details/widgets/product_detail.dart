@@ -31,12 +31,31 @@ class ProductDetailScreen extends StatelessWidget {
                       ),
                      ),
                      ///---Product Details
-                     TRoundedImage(
-                      width: 80,
-                      imageUrl: TImages.productShoeDetails3)
+                    Positioned(
+                      right: 0,
+                      bottom: 20,
+                      left: TSizes.defaultSpace,
+                      child: SizedBox(
+                        height: 80,
+                        child: ListView.separated(
+                           itemCount: 6 ,
+                           shrinkWrap: true,
+                           scrollDirection: Axis.horizontal,
+                           physics: const AlwaysScrollableScrollPhysics(),
+                           separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems,),
+                           itemBuilder: (_, index) => TRoundedImage(
+                           width: 80,
+                           backgroundColor: dark ? TColors.dark : TColors.white,
+                           border: Border.all(color: TColors.primary),
+                           padding: EdgeInsets.all(TSizes.sm),
+                           imageUrl: TImages.productShoeDetails3),),
+                      ),
+                    )
+                    
                   ],
                 ),
-              )),
+              )
+            ),
             
           ],
         ),
