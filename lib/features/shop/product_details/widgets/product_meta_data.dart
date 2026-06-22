@@ -1,7 +1,9 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/price_title/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
+import 'package:e_commerce_app/common/widgets/texts/t_brand_title_text_with_verified_icon.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
+import 'package:e_commerce_app/utils/constants/enums.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +40,7 @@ class TProductMetaData extends StatelessWidget {
                 ///--Title--
                 const TProductTitleText(title: 'Green Nike Sports Shirt'),
                 const SizedBox(height: TSizes.spaceBtwItems / 1.5),
-                
+
           ///--Stock Status--
           Row(
           children: [
@@ -47,7 +49,11 @@ class TProductMetaData extends StatelessWidget {
             Text('In Stock', style: Theme.of(context).textTheme.titleMedium),
           ],
         ),
-          ///---Brand---
+        const SizedBox(height: TSizes.spaceBtwItems / 1.5),
+
+        ///---Brand---
+        const TBrandTitleTextWithVerifiedIcon(title: 'Nike', brandTextSize: TextSizes.medium),
+          
       ],
     );
   }
