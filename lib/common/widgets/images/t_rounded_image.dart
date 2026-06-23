@@ -34,13 +34,13 @@ class TRoundedImage extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        //width : width,
-        //height:height,
+        width : width,
+        height:height,
         padding: padding,
       decoration: BoxDecoration(border: border,color: backgroundColor,borderRadius: BorderRadius.circular(borderRadius)),
         //color: Colors.red,
-      width: double.infinity,
-      height: 150, // This strictly forces the layout box height
+      // width: double.infinity,
+      // height: 150, // This strictly forces the layout box height
          
         child: ClipRRect(
           borderRadius: applyImageRadius ? BorderRadius.circular(borderRadius) :BorderRadius.zero,

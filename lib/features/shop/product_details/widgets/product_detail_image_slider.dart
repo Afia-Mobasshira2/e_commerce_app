@@ -18,50 +18,57 @@ class TProductImageSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return TCurvedEdgesWidgets(
-      child: Container(
-        color: dark ? TColors.darkerGrey : TColors.light,
-        child: Stack(
-          children: [
-              ///Main large image
-             SizedBox(
-              height: 400,child: Padding(
-                padding: EdgeInsets.all(TSizes.productImageRadius *2 ),
-                child: Center(child: Image(image: AssetImage(TImages.productShoe)),
-                                     ),
+    return Stack(
+    children: [
+      /// 1. Background with Curved Edges & Main Image
+      TCurvedEdgesWidgets(
+        child: Container(
+          color: dark ? TColors.darkerGrey : TColors.light,
+          child: SizedBox(
+            height: 400, 
+            child: Padding(
+              padding: EdgeInsets.all(TSizes.productImageRadius * 2),
+              child: Center(
+                child: Image(image: AssetImage(TImages.productShoe)),
               ),
-             ),
+            ),
+          ),
+        ),
+      ),
             
+            /// 2. Thumbnail Slider (Placed OUTSIDE TCurvedEdgesWidgets so it never gets clipped)
             Positioned(
               right: 0,
-              bottom: 20,
-              left: TSizes.defaultSpace,
+              left: 0,
+              bottom: 30,
               child: SizedBox(
                 height: 80,
-                child: ListView.separated(
-                   itemCount: 6 ,
-                   shrinkWrap: true,
-                   scrollDirection: Axis.horizontal,
-                   physics: const AlwaysScrollableScrollPhysics(),
-                   separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems,),
-                   itemBuilder: (_, index) => TRoundedImage(
-                   width: 80,
-                   backgroundColor: dark ? TColors.dark : TColors.white,
-                   border: Border.all(color: TColors.primary),
-                   padding: EdgeInsets.all(TSizes.sm),
-                   imageUrl: TImages.productShoeDetails3),),
+                child: Center(
+                  child: ListView.separated(
+                     itemCount: 6 ,
+                     shrinkWrap: true,
+                     scrollDirection: Axis.horizontal,
+                     physics: const AlwaysScrollableScrollPhysics(),
+                     separatorBuilder: (_, __) => const SizedBox(width: TSizes.spaceBtwItems,),
+                     itemBuilder: (_, index) => TRoundedImage(
+                     width: 80,
+                     height: 80,
+                     fit: BoxFit.contain,
+                     backgroundColor: dark ? TColors.dark : TColors.white,
+                     border: Border.all(color: TColors.primary, width: 2),
+                     padding: EdgeInsets.all(TSizes.sm),
+                     imageUrl: TImages.productShoeDetails3),),
+                ),
               ),
             ),
     
     
-            TAppBar(
-              showBackArrow: true,
-              actions: [TCircularIcon(icon: Iconsax.heart5,color: Colors.red,)],
-            )
-            
-          ],
-        ),
+    /// 3. AppBar
+      TAppBar(
+        showBackArrow: true,
+        actions: [TCircularIcon(icon: Iconsax.heart5, color: Colors.red)],
       )
-    );
-  }
+    ],
+  );
+}
 }
