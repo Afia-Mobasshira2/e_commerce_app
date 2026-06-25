@@ -45,7 +45,7 @@ class TProductImageSlider extends StatelessWidget {
                 height: 80,
                 child: Center(
                   child: ListView.separated(
-                     itemCount: 6 ,
+                     itemCount: 8 ,
                      shrinkWrap: true,
                      scrollDirection: Axis.horizontal,
                      physics: const AlwaysScrollableScrollPhysics(),
