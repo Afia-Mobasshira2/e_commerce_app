@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
+import 'package:e_commerce_app/common/widgets/price_title/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/section_heading.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
@@ -26,25 +27,46 @@ class TProductAttributes extends StatelessWidget {
                   const TSectionHeading(title: 'Variation', showActionButton: false),
                   const SizedBox(width: TSizes.spaceBtwItems),
 
-                  const TProductTitleText(title: 'Price : ', smallSize: true),
-                  Row(
+                  Column(
                     children: [
+                       Row(
+                    children: [
+                      const TProductTitleText(title: 'Price : ', smallSize: true),
+                      const SizedBox(height: TSizes.spaceBtwSections,),
+                      
                       /// Actual Price
                       Text(
                         '\$25',
                         style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
                       ), 
+                      const SizedBox(width: TSizes.spaceBtwItems),
+
 
                       /// Sale Price
+                      const TProductPriceText(price: '20',)
                     ],
-                  ) 
+                  ) ,
+                  ///Stock
+                       Row(
+                    children: [
+                      const TProductTitleText(title: 'Stock',smallSize: true,),
+                      Text('In Stock',style:  Theme.of(context).textTheme.titleMedium,),
+                    ]
+                      )
+                    ],
+                  ),
+                 
+
+                  
+                
+                    ],
+                  )
                 ],
-              )
-            ]
-          )
-        )
-      ]
-    );
+              ),
+          )  //Variation Discription
+            ],
+          );
+       
       
   }
 }

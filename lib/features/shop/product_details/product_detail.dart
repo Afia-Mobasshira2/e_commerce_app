@@ -2,6 +2,7 @@ import 'package:e_commerce_app/common/widgets/Icons/t_circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/curved_edges/curved_edges_widget.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
+import 'package:e_commerce_app/features/shop/product_details/widgets/product_attributes.dart';
 import 'package:e_commerce_app/features/shop/product_details/widgets/product_detail_image_slider.dart';
 import 'package:e_commerce_app/features/shop/product_details/widgets/product_meta_data.dart';
 import 'package:e_commerce_app/features/shop/product_details/widgets/rating_share_widget.dart';
@@ -34,7 +35,11 @@ class ProductDetailScreen extends StatelessWidget {
                 
                 /// ---Price,title,stock,brand--
                 TProductMetaData(),
+                const SizedBox(height: TSizes.spaceBtwItems),
+                
+
                 /// ---Attributes---
+                TProductAttributes(),
                 /// --Checking button--
                 /// --Discription--
                 /// --Reviews--
