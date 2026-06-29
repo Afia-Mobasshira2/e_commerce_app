@@ -23,37 +23,55 @@ class TProductAttributes extends StatelessWidget {
             children: [
               /// Title, Price and Stock Staus
               Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const TSectionHeading(title: 'Variation', showActionButton: false),
+                  Text(
+                    'Variation',
+                    style: Theme.of(context).textTheme.titleLarge?.copyWith(fontWeight: FontWeight.bold),
+                  ),
                   const SizedBox(width: TSizes.spaceBtwItems),
 
-                  Column(
-                    children: [
-                       Row(
-                    children: [
-                      const TProductTitleText(title: 'Price : ', smallSize: true),
-                      const SizedBox(height: TSizes.spaceBtwSections,),
-                      
-                      /// Actual Price
-                      Text(
-                        '\$25',
-                        style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
-                      ), 
-                      const SizedBox(width: TSizes.spaceBtwItems),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        ///Price Row
+                         Row(
+                           children: [
+                             SizedBox(
+                            width: 60,
+                            child:  TProductTitleText(title: 'Price : ', smallSize: true),
+                          )  ,
 
+                              /// Actual Price
+                              Text(
+                              '\$25',
+                              style: Theme.of(context).textTheme.titleSmall!.apply(decoration: TextDecoration.lineThrough),
+                              ), 
+                              const SizedBox(width: TSizes.spaceBtwItems),
+                                                 
+                                                 
+                              /// Sale Price
+                              const TProductPriceText(price: '20',),
+                         ],
+                    ) ,
 
-                      /// Sale Price
-                      const TProductPriceText(price: '20',)
-                    ],
-                  ) ,
-                  ///Stock
-                       Row(
-                    children: [
-                      const TProductTitleText(title: 'Stock',smallSize: true,),
-                      Text('In Stock',style:  Theme.of(context).textTheme.titleMedium,),
-                    ]
-                      )
-                    ],
+                    ///Stock
+                         Row(
+                          children: [
+                            // Matches the width of the price label above
+                            const SizedBox(
+                              width: 60, 
+                              child: TProductTitleText(title: 'Stock : ', smallSize: true),
+                            ),
+                            Text(
+                              'In Stock',
+                              style: Theme.of(context).textTheme.titleMedium,
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                  
 
