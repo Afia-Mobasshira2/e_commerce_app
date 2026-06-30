@@ -97,7 +97,7 @@ class TProductAttributes extends StatelessWidget {
           children: [
             const TSectionHeading(title: 'Colors'),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-            TChoiceChip(text: '', selected: ,),
+            TChoiceChip(text: 'Green', selected: true,),
             
           ],
         )
