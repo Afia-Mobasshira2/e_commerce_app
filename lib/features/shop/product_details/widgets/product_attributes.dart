@@ -69,6 +69,12 @@ class TProductAttributes extends StatelessWidget {
                               style: Theme.of(context).textTheme.titleMedium,
                             ),
                           ],
+                        ),
+
+                        ///Variation Description
+                        const TProductTitleText(title: 'This is the description of the product and it can go upto max 4 lines',
+                        smallSize: true,
+                        maxLines: 4,
                         )
                       ],
                     ),
