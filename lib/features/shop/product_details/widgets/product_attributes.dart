@@ -87,10 +87,37 @@ class TProductAttributes extends StatelessWidget {
                   )
                 ],
               ),
-          )  //Variation Discription
+          ),
+      
+        const SizedBox(height: TSizes.spaceBtwSections),
+
+        ///------Attributes----------
+        Column(
+          children: [
+            const TSectionHeading(title: 'Colors'),
+            const SizedBox(height: TSizes.spaceBtwItems / 2),
+            TChoiceChip(),
+            
+          ],
+        )
+        //Variation Discription
             ],
           );
        
       
+  }
+}
+
+class TChoiceChip extends StatelessWidget {
+  const TChoiceChip({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return ChoiceChip(label: Text('Green'), selected: true,
+    onSelected: (value) {},
+    labelStyle: const TextStyle(color: true ? TColors.white : null),
+    );
   }
 }
