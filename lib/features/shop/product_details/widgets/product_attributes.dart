@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/widgets/chips/choise_chip.dart';
 import 'package:e_commerce_app/common/widgets/custom_shapes/container/t_roundeed_container.dart';
 import 'package:e_commerce_app/common/widgets/price_title/product_price_text.dart';
 import 'package:e_commerce_app/common/widgets/texts/product_title_text.dart';
@@ -96,7 +97,7 @@ class TProductAttributes extends StatelessWidget {
           children: [
             const TSectionHeading(title: 'Colors'),
             const SizedBox(height: TSizes.spaceBtwItems / 2),
-            TChoiceChip(),
+            TChoiceChip(text: '', selected: ,),
             
           ],
         )
@@ -108,16 +109,3 @@ class TProductAttributes extends StatelessWidget {
   }
 }
 
-class TChoiceChip extends StatelessWidget {
-  const TChoiceChip({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return ChoiceChip(label: Text('Green'), selected: true,
-    onSelected: (value) {},
-    labelStyle: const TextStyle(color: true ? TColors.white : null),
-    );
-  }
-}
