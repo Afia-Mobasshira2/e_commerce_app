@@ -94,17 +94,13 @@ class TProductAttributes extends StatelessWidget {
 
         ///------Attributes----------
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TSectionHeading(title: 'Colors',showActionButton: false,),
             SizedBox(height: TSizes.spaceBtwItems / 2),
             Wrap(
+              spacing: 8,
               children: [
-            TChoiceChip(text: 'Green', selected: true, onSelected: (value) {},),
-            TChoiceChip(text: 'Blue', selected: false, onSelected: (value) {},),
-            TChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {},),
-            TChoiceChip(text: 'Green', selected: true, onSelected: (value) {},),
-            TChoiceChip(text: 'Blue', selected: false, onSelected: (value) {},),
-            TChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {},),
             TChoiceChip(text: 'Green', selected: true, onSelected: (value) {},),
             TChoiceChip(text: 'Blue', selected: false, onSelected: (value) {},),
             TChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {},),
@@ -113,10 +109,12 @@ class TProductAttributes extends StatelessWidget {
           ],
         ),
         Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TSectionHeading(title: 'Size',showActionButton: false,),
             SizedBox(height: TSizes.spaceBtwItems / 2),
             Wrap(
+              spacing: 8,
               children: [
                 TChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {},),
                 TChoiceChip(text: 'EU 36', selected: false,onSelected: (value) {},),
