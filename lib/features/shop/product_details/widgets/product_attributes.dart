@@ -95,21 +95,34 @@ class TProductAttributes extends StatelessWidget {
         ///------Attributes----------
         Column(
           children: [
-            const TSectionHeading(title: 'Colors'),
+            const TSectionHeading(title: 'Colors',showActionButton: false,),
             SizedBox(height: TSizes.spaceBtwItems / 2),
-            TChoiceChip(text: 'Green', selected: true,),
-            TChoiceChip(text: 'Blue', selected: false,),
-            TChoiceChip(text: 'Yellow', selected: false,),
-            
+            Wrap(
+              children: [
+            TChoiceChip(text: 'Green', selected: true, onSelected: (value) {},),
+            TChoiceChip(text: 'Blue', selected: false, onSelected: (value) {},),
+            TChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {},),
+            TChoiceChip(text: 'Green', selected: true, onSelected: (value) {},),
+            TChoiceChip(text: 'Blue', selected: false, onSelected: (value) {},),
+            TChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {},),
+            TChoiceChip(text: 'Green', selected: true, onSelected: (value) {},),
+            TChoiceChip(text: 'Blue', selected: false, onSelected: (value) {},),
+            TChoiceChip(text: 'Yellow', selected: false, onSelected: (value) {},),
+              ],
+            )
           ],
         ),
         Column(
           children: [
-            const TSectionHeading(title: 'Size'),
+            const TSectionHeading(title: 'Size',showActionButton: false,),
             SizedBox(height: TSizes.spaceBtwItems / 2),
-            TChoiceChip(text: 'EU 34', selected: true,),
-            TChoiceChip(text: 'EU 36', selected: false,),
-            TChoiceChip(text: 'EU 38', selected: false,),
+            Wrap(
+              children: [
+                TChoiceChip(text: 'EU 34', selected: true, onSelected: (value) {},),
+                TChoiceChip(text: 'EU 36', selected: false,onSelected: (value) {},),
+                TChoiceChip(text: 'EU 38', selected: false,onSelected: (value) {},),
+              ],
+            )
             
           ],
         ),

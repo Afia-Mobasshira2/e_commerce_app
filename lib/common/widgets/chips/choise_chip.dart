@@ -19,7 +19,7 @@ class TChoiceChip extends StatelessWidget {
   Widget build(BuildContext context) {
     final isColor = THelperFunctions.getColor(text) != null;
     return ChoiceChip(
-    label: isColor ? const SizedBox() : const Text(''), 
+    label: isColor ? const SizedBox() : Text(text), 
     selected: selected,
     onSelected: onSelected,
     labelStyle:  TextStyle(color: selected ? TColors.white : null),
