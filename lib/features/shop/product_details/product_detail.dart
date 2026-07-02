@@ -65,12 +65,20 @@ class ProductDetailScreen extends StatelessWidget {
                 const Divider(),
                 const SizedBox(height: TSizes.spaceBtwSections),
                 Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                 // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const TSectionHeading(title: 'Reviews (199)', showActionButton: true,),
-                    IconButton(onPressed: (){}, icon:  Icon(Iconsax.arrow_right3,size: 20,color: Colors.pink,))
-                  ],
-                )
+                    const Text(
+                      'Reviews (199)', 
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                      ),
+                      const Spacer(), // Automatically pushes the icon to the absolute right
+                      IconButton(
+                      onPressed: () {}, 
+                      icon: const Icon(Icons.arrow_forward_ios, size: 20, color: Colors.pink),
+                    ),
+                  ]
+                ),
+                const SizedBox(height: TSizes.spaceBtwSections * 2),
               ],
              ),
              )
