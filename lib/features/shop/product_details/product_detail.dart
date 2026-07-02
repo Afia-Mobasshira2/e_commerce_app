@@ -13,6 +13,7 @@ import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:readmore/readmore.dart';
 
 class ProductDetailScreen extends StatelessWidget {
   const ProductDetailScreen({super.key});
@@ -49,11 +50,26 @@ class ProductDetailScreen extends StatelessWidget {
 
                 /// --Description--
                 const TSectionHeading(title: 'Description',showActionButton: false,),
-                const SizedBox(height: TSizes.spaceBtwSections),
+                const SizedBox(height: TSizes.spaceBtwItems),
+                const ReadMoreText("A product description is a written explanation of a product's features and benefits. It is used to market and sell products online, in physical stores, or in print advertising. A good description should be clear, concise, and informative, and it should be written with the target audience in mind.",
+                trimLines: 2,
+                trimMode: TrimMode.Line,
+                trimCollapsedText: 'Show more',
+                trimExpandedText: 'Less',
+                moreStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
+                lessStyle: TextStyle(fontSize: 14,fontWeight: FontWeight.w800),
+                ),
 
                 /// --Reviews--
+                const Divider(),
                 const SizedBox(height: TSizes.spaceBtwSections),
-                
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const TSectionHeading(title: 'Reviews (199)', showActionButton: true,),
+                    IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right3,size: 18,))
+                  ],
+                )
               ],
              ),
              )
