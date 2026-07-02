@@ -22,6 +22,7 @@ class ProductDetailScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
     return  Scaffold(
+      //bottomNavigationBar: TBottomAddToCart(),
         body:  SingleChildScrollView(
         child: Column(
           children: [
@@ -67,7 +68,7 @@ class ProductDetailScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     const TSectionHeading(title: 'Reviews (199)', showActionButton: true,),
-                    IconButton(onPressed: (){}, icon: const Icon(Iconsax.arrow_right3,size: 18,))
+                    IconButton(onPressed: (){}, icon:  Icon(Iconsax.arrow_right3,size: 20,color: Colors.pink,))
                   ],
                 )
               ],
