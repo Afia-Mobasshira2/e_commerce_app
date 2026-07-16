@@ -7,6 +7,7 @@ import 'package:e_commerce_app/features/shop/product_details/widgets/product_att
 import 'package:e_commerce_app/features/shop/product_details/widgets/product_detail_image_slider.dart';
 import 'package:e_commerce_app/features/shop/product_details/widgets/product_meta_data.dart';
 import 'package:e_commerce_app/features/shop/product_details/widgets/rating_share_widget.dart';
+import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/product_reviews.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
@@ -75,7 +76,7 @@ class ProductDetailScreen extends StatelessWidget {
                       ),
                       const Spacer(), // Automatically pushes the icon to the absolute right
                       IconButton(
-                      onPressed: () => Get.to(() => const ProductDetailScreen()), 
+                      onPressed: () => Get.to(() => const ProductReviewsScreen()), 
                       icon: const Icon(Icons.arrow_forward_ios, size: 20, color: Colors.pink),
                     ),
                   ]
