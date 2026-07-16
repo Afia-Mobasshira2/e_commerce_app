@@ -1,4 +1,5 @@
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
+import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/progress_indicator_and_rating.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
@@ -26,25 +27,16 @@ class ProductReviewsScreen extends StatelessWidget {
               ///Overall prduct rating
               Row(
                 children: [
-                  Text('4.8',style: Theme.of(context).textTheme.displayLarge,),
-                  Expanded(child: Column(
+                  Expanded(flex: 3,child: Text('4.8',style: Theme.of(context).textTheme.displayLarge,)),
+                  Expanded(
+                    flex: 7,
+                    child: Column(
                     children: [
-                      Row(
-                        children: [
-                          Text('5',style: Theme.of(context).textTheme.bodyMedium),
-                          Expanded(child: 
-                          SizedBox(width: TDeviceUtils.getScreenWidth(context) * 0.8,
-                          child: LinearProgressIndicator(
-                            value: 0.5,
-                            minHeight: 11,
-                            backgroundColor: TColors.grey,
-                            borderRadius: BorderRadius.circular(7),
-                            valueColor: const AlwaysStoppedAnimation(TColors.primary),
-                          ),
-                          )
-                          )
-                        ],
-                      )
+                      TRatingProgressIndicator(text: '5', value: 1.0,),
+                      TRatingProgressIndicator(text: '4', value: 0.8,),
+                      TRatingProgressIndicator(text: '3', value: 0.6,),
+                      TRatingProgressIndicator(text: '2', value: 0.4,),
+                      TRatingProgressIndicator(text: '1', value: 0.2,),
                     ],
                   ))
                 ],
@@ -56,3 +48,4 @@ class ProductReviewsScreen extends StatelessWidget {
     );
   }
 }
+
