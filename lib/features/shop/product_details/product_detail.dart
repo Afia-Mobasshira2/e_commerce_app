@@ -12,6 +12,8 @@ import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
@@ -73,7 +75,7 @@ class ProductDetailScreen extends StatelessWidget {
                       ),
                       const Spacer(), // Automatically pushes the icon to the absolute right
                       IconButton(
-                      onPressed: () {}, 
+                      onPressed: () => Get.to(() => const ProductDetailScreen()), 
                       icon: const Icon(Icons.arrow_forward_ios, size: 20, color: Colors.pink),
                     ),
                   ]
