@@ -37,12 +37,9 @@ class ProductReviewsScreen extends StatelessWidget {
               const SizedBox(height: TSizes.defaultSpace,),
 
               ///User Review List
-              //UserReviewCard(),
+              UserReviewCard(),
 
-              const Text(
-                  'HELLO',
-                style: TextStyle(fontSize: 40, color: Colors.red),
-              ),
+             
             ],
           ),
           ),

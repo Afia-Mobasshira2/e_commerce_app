@@ -11,53 +11,35 @@ class UserReviewCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final dark = THelperFunctions.isDarkMode(context);
-    return
-    Container(
-    height: 150,
-    width: double.infinity,
-    color: Colors.red,
-    child: const Center(
-      child: Text(
-        'User Review Card',
-        style: TextStyle(color: Colors.white),
-      ),
-    ),
-  );
-}
     
+    return Column(
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Row(
+              children: [
+                CircleAvatar(backgroundImage: AssetImage(TImages.userProfileImage1),),
+                const SizedBox(width: TSizes.defaultSpace,),
+                Text('Joe Joli',style: Theme.of(context).textTheme.titleLarge),
+              ],
+            ),
+          IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert)),
 
-}
-
-
-    
-//      Column(
-//       children: [
-//         Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             Row(
-//               children: [
-//                 CircleAvatar(backgroundImage: AssetImage(TImages.userProfileImage1),),
-//                 const SizedBox(width: TSizes.defaultSpace,),
-//                 Text('Joe Joli',style: Theme.of(context).textTheme.titleLarge),
-//               ],
-//             ),
-//           IconButton(onPressed: (){}, icon: const Icon(Icons.more_vert)),
-
-//           ],
-//         ),
+          ],
+        ),
         
-//         const SizedBox(height: TSizes.defaultSpace,),
+        const SizedBox(height: TSizes.defaultSpace,),
 
-//         //Review
-//         Row(
-//           children: [
-//               TRatingBarIndicator(rating: 4),
-//               const SizedBox(width: TSizes.defaultSpace,),
-//               Text('05 june 2026',style: Theme.of(context).textTheme.bodyMedium),
-//           ],
-//         )
-//         ],
-//     );
-//   }
-// }
+        //Review
+        Row(
+          children: [
+              TRatingBarIndicator(rating: 4),
+              const SizedBox(width: TSizes.defaultSpace,),
+              Text('05 june 2026',style: Theme.of(context).textTheme.bodyMedium),
+          ],
+        )
+        ],
+    );
+  }
+}
