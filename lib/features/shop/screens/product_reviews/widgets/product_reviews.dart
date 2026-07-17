@@ -2,6 +2,7 @@ import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/products/ratings/rating_indicator.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/progress_indicator_and_rating.dart';
 import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/rating_progress_indicator.dart';
+import 'package:e_commerce_app/features/shop/screens/product_reviews/widgets/user_review_card.dart';
 import 'package:e_commerce_app/utils/constants/colors.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/device/device_utility.dart';
@@ -36,7 +37,12 @@ class ProductReviewsScreen extends StatelessWidget {
               const SizedBox(height: TSizes.defaultSpace,),
 
               ///User Review List
-              UserReviewCard(),
+              //UserReviewCard(),
+
+              const Text(
+                  'HELLO',
+                style: TextStyle(fontSize: 40, color: Colors.red),
+              ),
             ],
           ),
           ),
