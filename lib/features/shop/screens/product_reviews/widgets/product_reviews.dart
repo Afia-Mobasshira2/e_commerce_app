@@ -38,6 +38,9 @@ class ProductReviewsScreen extends StatelessWidget {
 
               ///User Review List
               UserReviewCard(),
+              UserReviewCard(),
+              UserReviewCard(),
+              UserReviewCard(),
 
              
             ],
