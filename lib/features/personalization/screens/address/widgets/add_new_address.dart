@@ -24,9 +24,21 @@ class AddNewAddressScreen extends StatelessWidget {
                   children: [
                     Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building_31), labelText :"Street"))),
                     SizedBox(width: TSizes.spaceBtwInputFields),
-                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.code), labelText: 'Postal code'))),
+                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.code), labelText: 'Postal Code'))),
                   ],
-                ) // Row
+                ),
+                const SizedBox(height: TSizes.spaceBtwInputFields),
+                 Row(
+                  children: [
+                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.building), labelText :"City"))),
+                    SizedBox(width: TSizes.spaceBtwInputFields),
+                    Expanded(child: TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.activity), labelText: 'State'))),
+                  ],
+                ),
+                const SizedBox(height: TSizes.spaceBtwInputFields),
+                TextFormField(decoration: const InputDecoration(prefixIcon: Icon(Iconsax.global), labelText: 'Country')),
+                const SizedBox(height: TSizes.spaceBtwItems),
+                 SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text('Save')),)
               ],
             ) // Column
           ), // Form
