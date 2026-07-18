@@ -23,13 +23,13 @@ class TLoginForm extends StatelessWidget {
             TextFormField(
               decoration: const InputDecoration(prefixIcon: Icon(Iconsax.direct_right),suffixIcon: Icon(Icons.email),labelText: TTexts.email),
             ),
-            const SizedBox(height: TSizes.spaceBtwinputFields),
+            const SizedBox(height: TSizes.spaceBtwInputFields),
             
             //Password
             TextFormField(
               decoration: const InputDecoration(prefixIcon: Icon(Iconsax.password_check),suffixIcon: Icon(Iconsax.eye_slash),labelText: TTexts.password),
             ),
-            const SizedBox(height: TSizes.spaceBtwinputFields / 2,),
+            const SizedBox(height: TSizes.spaceBtwInputFields / 2,),
         
     
             //Remember me and Forget Password
