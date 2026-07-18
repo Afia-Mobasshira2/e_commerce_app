@@ -39,14 +39,20 @@ class TSingleAddress extends StatelessWidget {
               ),
             ),
             Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('88754 uttora, airport Dhaka Banglabesh',
+                Text('Dolly Begum',
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: Theme.of(context).textTheme.titleLarge,
                 ),
 
                 const SizedBox(height: TSizes.sm /2,),
+                const Text('+01665433257',maxLines: 1,overflow: TextOverflow.ellipsis,
+                ),
+                const SizedBox(height: TSizes.sm /2,),
+
+                const Text('88754 uttora, airport Dhaka Banglabesh',softWrap: true,)
               ],
             )
           ],
