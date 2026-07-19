@@ -40,9 +40,9 @@ class AddNewAddressScreen extends StatelessWidget {
                 const SizedBox(height: TSizes.spaceBtwItems),
                  SizedBox(width: double.infinity,child: ElevatedButton(onPressed: (){}, child: Text('Save')),)
               ],
-            ) // Column
-          ), // Form
-        ), // Padding
+            ) 
+          ),
+        ), 
       ),
     );
   }
