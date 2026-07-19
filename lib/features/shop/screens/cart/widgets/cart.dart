@@ -1,3 +1,4 @@
+import 'package:e_commerce_app/common/widgets/Icons/t_circular_icon.dart';
 import 'package:e_commerce_app/common/widgets/appbar/appbar.dart';
 import 'package:e_commerce_app/common/widgets/images/t_rounded_image.dart';
 import 'package:e_commerce_app/common/widgets/products.cart/cart_item.dart';
@@ -8,6 +9,7 @@ import 'package:e_commerce_app/utils/constants/image_strings.dart';
 import 'package:e_commerce_app/utils/constants/sizes.dart';
 import 'package:e_commerce_app/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
+import 'package:iconsax/iconsax.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
@@ -26,7 +28,19 @@ class CartScreen extends StatelessWidget {
             separatorBuilder: (_, __) =>  const SizedBox(height: TSizes.defaultSpace,) ,
             itemBuilder: (_,index) => Column(
               children: [
-                TCartItem()
+                TCartItem(),
+                const SizedBox(height: TSizes.spaceBtwItems),
+
+                Row(
+                  children: [
+                    //Add Remove Button
+                    TCircularIcon(icon: Iconsax.minus,
+                    width: 32,
+                    height: 32,
+                    size: TSizes.md,
+                    )
+                  ],
+                )
               ],
             ),
           ),
